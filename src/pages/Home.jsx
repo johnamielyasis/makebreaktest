@@ -3,7 +3,7 @@ import React from 'react';
 const Home = () => {
     return (
         <>
-            <h1>hwHOME</h1>
+            <h2>Select a game mode:</h2>
         </>
     );
 };
