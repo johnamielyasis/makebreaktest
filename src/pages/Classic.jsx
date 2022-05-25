@@ -11,14 +11,37 @@ const Classic = () => {
     const [completionStatus, setCompletionStatus] = useState(false);
     const [difficulty, setDifficulty] = useState('');
 
+    const compatibility = Math.ceil((makeCount / winConditionCount) * 100);
+
     const updateMakeCount = () => setMakeCount(makeCount + 1);
     const updateMehCount = () => setMehCount(mehCount + 1);
     const updateBreakCount = () => setBreakCount(breakCount + 1);
     const updateQuestionCount = () => setQuestionCount(questionCount + 1);
 
+    
+
+    const checkCompletion = () => {
+        if (winConditionCount === questionCount) {
+            setCompletionStatus(true);
+        };
+    };
+
+    const playAgain = () => {
+        setCompletionStatus(false);
+        setDifficulty('');
+        setMakeCount(0);
+        setBreakCount(0);
+        setMehCount(0);
+        questions.sort(function () {
+            return Math.random() - .5
+        });
+        setQuestionCount(1);
+    };
+
     const updateEasyDifficulty = () => {
         setDifficulty('easy');
-        setWinConditionCount(11);
+        // switch back to 11 when done with testing
+        setWinConditionCount(1);
     };
 
     const updateMildDifficulty = () => {
@@ -31,11 +54,6 @@ const Classic = () => {
         setWinConditionCount(15);
     };
 
-    const checkCompletion = () => {
-        if (winConditionCount === questionCount) {
-            setCompletionStatus(true);
-        };
-    };
     // these three functions could be made into a single one
     const updateMake = () => {
         updateMakeCount();
@@ -68,11 +86,11 @@ const Classic = () => {
         'What are your tastes in music?',
         'How do you like your coffee?',
         'What is your boba order?',
-        'Are you lactose?',
+        'Are you lactose intolerant?',
         'What color do you think my aura is?',
         'Do you believe in astrology?',
         'Are you religious?',
-        'What is a dealbreaker for you?',
+        'Name one thing that is a dealbreaker for you.',
         'Do you stack your dishes and plates after eating at a restaurant?',
         'Plant, fur, or real babies?',
         'How important is sex in your relationship?',
@@ -83,8 +101,11 @@ const Classic = () => {
         'Besides work, what occupies your time?',
         'Staying in vs. going out?',
         'Have you ever cheated on someone before?',
+        'What is your definition of cheating?',
         'Does size matter to you?'
-    ];
+    ].sort(function () {
+        return Math.random() - .5
+    });
 
     console.log('win condition count: ', winConditionCount, 'question count: ', questionCount, 'completion status:', completionStatus, 'make count:', makeCount, 'break count:', breakCount, 'meh count', mehCount);
 
@@ -99,13 +120,14 @@ const Classic = () => {
                         <button onClick={updateMildDifficulty}>Mild</button>
                         <button onClick={updateHardDifficulty}>Hard</button>
                     </div>
-                ) :
+                ) : completionStatus ? 
+                    <div>
+                        <button onClick={playAgain}>Play again</button>
+                    </div> 
+                        :
                     <div>
                         <h3>Question:</h3>
                         <p>{questions[questionCount]}</p>
-                        <p>Makes: {makeCount}</p>
-                        <p>Mehs: {mehCount}</p>
-                        <p>Breaks: {breakCount}</p>
                         <button onClick={updateMake}>Make</button>
                         <button onClick={updateMeh}>Meh</button>
                         <button onClick={updateBreak}>Break</button>
@@ -113,9 +135,23 @@ const Classic = () => {
                 }
                 <div>
                     <h3>Result:</h3>
-                    {completionStatus === true ? 
-                    (makeCount > mehCount && makeCount > breakCount ? <h3>You Win!</h3>
-                        : <h3>You Lose!</h3>)
+                    {completionStatus === true ?
+                        (makeCount > mehCount && makeCount > breakCount ?
+                            <div>
+                                <h4>You Win!</h4>
+                                <p>Compatibility: {compatibility}%</p>
+                                <p>Makes: {makeCount}</p>
+                                <p>Mehs: {mehCount}</p>
+                                <p>Breaks: {breakCount}</p>
+                            </div>
+                            : <div>
+                                <h4>You Lose!</h4>
+                                <p>Compatibility: {compatibility}%</p>
+                                <p>Makes: {makeCount}</p>
+                                <p>Mehs: {mehCount}</p>
+                                <p>Breaks: {breakCount}</p>
+                            </div>
+                        )
                     : <h3>In Progress...</h3>
                     }
 
