@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Buttons, Scores, Instructions } from '../components/molecules/index.js';
+import { Instructions } from '../components/molecules/index.js';
 
 const questions = [
     'Do you like pineapple on pizza?',
@@ -30,7 +30,13 @@ const questions = [
     'Staying in vs. going out?',
     'Have you ever cheated on someone before?',
     'What is your definition of cheating?',
-    'Does size matter to you?'
+    'Does size matter to you?',
+    'Where do you stand on marriage?',
+    'What are your thoughts about the Biden administration?',
+    'Where do you stand on the whole gun issue?',
+    'Is physical attraction important to you?',
+    'What type of intelligence do you find attractive, if at all?',
+    'Do you speak any other languages?'
 ].sort(function () {
     return Math.random() - .5;
 });
