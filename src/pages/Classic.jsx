@@ -1,6 +1,39 @@
 import React, { useState } from 'react';
 import { Buttons, Scores, Instructions } from '../components/molecules/index.js';
 
+const questions = [
+    'Do you like pineapple on pizza?',
+    'What is your love language?',
+    'Why do you think you are single? (if you are)',
+    'What do you hope to gain from dating?',
+    'What are your current personal goals?',
+    'What are 3 traits people you are dating must have?',
+    'Are you Gordon Ramsay in the kitchen?',
+    'What are you most grateful for?',
+    'Spontaneous adventure? Or a well-planned one?',
+    'What are your tastes in music?',
+    'How do you like your coffee?',
+    'What is your boba order?',
+    'Are you lactose intolerant?',
+    'What color do you think my aura is?',
+    'Do you believe in astrology?',
+    'Are you religious?',
+    'Name one thing that is a dealbreaker for you.',
+    'Do you stack your dishes and plates after eating at a restaurant?',
+    'Plant, fur, or real babies?',
+    'How important is sex in your relationship?',
+    'What are your dietary preferences?',
+    'What are your thoughts about the Trump administration?',
+    'How are you with finances?',
+    'Do you like Anime?',
+    'Besides work, what occupies your time?',
+    'Staying in vs. going out?',
+    'Have you ever cheated on someone before?',
+    'What is your definition of cheating?',
+    'Does size matter to you?'
+].sort(function () {
+    return Math.random() - .5;
+});
 
 const Classic = () => {
     const [makeCount, setMakeCount] = useState(0);
@@ -72,40 +105,6 @@ const Classic = () => {
         updateQuestionCount();
         checkCompletion();
     };
-    //questions will need weight 
-    const questions = [
-        'Do you like pineapple on pizza?',
-        'What is your love language?',
-        'Why do you think you are single? (if you are)',
-        'What do you hope to gain from dating?',
-        'What are your current personal goals?',
-        'What are 3 traits people you are dating must have?',
-        'Are you Gordon Ramsay in the kitchen?',
-        'What are you most grateful for?',
-        'Spontaneous adventure? Or a well-planned one?',
-        'What are your tastes in music?',
-        'How do you like your coffee?',
-        'What is your boba order?',
-        'Are you lactose intolerant?',
-        'What color do you think my aura is?',
-        'Do you believe in astrology?',
-        'Are you religious?',
-        'Name one thing that is a dealbreaker for you.',
-        'Do you stack your dishes and plates after eating at a restaurant?',
-        'Plant, fur, or real babies?',
-        'How important is sex in your relationship?',
-        'What are your dietary preferences?',
-        'What are your thoughts about the Trump administration?',
-        'How are you with finances?',
-        'Do you like Anime?',
-        'Besides work, what occupies your time?',
-        'Staying in vs. going out?',
-        'Have you ever cheated on someone before?',
-        'What is your definition of cheating?',
-        'Does size matter to you?'
-    ].sort(function () {
-        return Math.random() - .5
-    });
 
     console.log('win condition count: ', winConditionCount, 'question count: ', questionCount, 'completion status:', completionStatus, 'make count:', makeCount, 'break count:', breakCount, 'meh count', mehCount);
 
