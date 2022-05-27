@@ -1,7 +1,7 @@
 const Gradient = () => {
     return (
         <>
-            <h4>hwGRADIENT</h4>
+            <h2>Gradient Mode</h2>
         </>
     );
 };
