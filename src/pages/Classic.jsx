@@ -83,15 +83,23 @@ const Classic = () => {
         setWinConditionCount(1);
     };
 
-    const updateMildDifficulty = () => {
-        setDifficulty('mild');
-        setWinConditionCount(13);
+    const updateEndlessDifficulty = () => {
+        setDifficulty('endless');
+        // switch back to 11 when done with testing
+        setWinConditionCount(questions.length - 1);
     };
 
     const updateHardDifficulty = () => {
         setDifficulty('hard');
         setWinConditionCount(15);
     };
+
+    const updateMildDifficulty = () => {
+        setDifficulty('mild');
+        setWinConditionCount(13);
+    };
+
+    
 
     // these three functions could be made into a single one
     const updateMake = () => {
@@ -124,6 +132,7 @@ const Classic = () => {
                         <button onClick={updateEasyDifficulty}>Easy</button>
                         <button onClick={updateMildDifficulty}>Mild</button>
                         <button onClick={updateHardDifficulty}>Hard</button>
+                        <button onClick={updateEndlessDifficulty}>Endless</button>
                     </div>
                 ) : completionStatus ? 
                     <div>

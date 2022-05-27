@@ -1,7 +1,7 @@
 import React from 'react';
 import { Score } from '../atoms/index';
 
-const Scores = (props) => {
+const Scores = () => {
     return (
         <>
             <p>
