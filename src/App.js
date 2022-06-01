@@ -20,7 +20,8 @@ function App() {
         <nav>
           <Link to="/">Classic | </Link>
           <Link to="/temperature">Temperature | </Link>
-          <Link to="/gradient">Gradient</Link>
+          <Link to="/gradient">Gradient |</Link>
+          <Link to="/hidden">Hidden</Link>
         </nav>
         <Routes>
           <Route path="/" element={<Classic />}>Classic</Route>
