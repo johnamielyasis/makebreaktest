@@ -1,5 +1,17 @@
 import React, { useState } from "react";
+import Modal from "react-modal";
 import { Instructions } from "../components/molecules/index.js";
+
+const modalStyles = {
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+  },
+};
 
 const questions = [
   "Do you like pineapple on pizza?",
@@ -42,6 +54,13 @@ const questions = [
 });
 
 const Classic = () => {
+  //modal stuff
+  const [modalIsOpen, setIsOpen] = useState(false);
+  const openModal = () => setIsOpen(true);
+  // const afterOpenModal = () => (subtitle.style.color = "red");
+  const closeModal = () => setIsOpen(false);
+  // end modal stuff
+
   const [makeCount, setMakeCount] = useState(0);
   const [mehCount, setMehCount] = useState(0);
   const [breakCount, setBreakCount] = useState(0);
@@ -139,7 +158,18 @@ const Classic = () => {
         <h2>Classic Mode</h2>
         {started === false ? (
           <div>
-            <button>Instructions</button>
+            <button onClick={openModal}>Instructions</button>
+            <Modal
+              isOpen={modalIsOpen}
+              // onAfterOpen={afterOpenModal}
+              onRequestClose={closeModal}
+              style={modalStyles}
+              contentLabel="Example Modal"
+              ariaHideApp={false}
+            >
+              <Instructions />
+              <button onClick={closeModal}>close</button>
+            </Modal>
             <br />
             <button onClick={handleStarted}>Play</button>
           </div>
@@ -192,14 +222,9 @@ const Classic = () => {
             </div>
           </div>
         )}
-        <Instructions />
       </div>
     </>
   );
 };
 
 export default Classic;
-
-/*
-
-*/
