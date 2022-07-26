@@ -71,4 +71,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 # makebreaktest
 
 After making changes and pushing to master branch:
-Run ### `**npm run deploy**`. Should update in minutes after a hard refresh.
+Run ### `npm run deploy`. Should update in minutes after a hard refresh.
