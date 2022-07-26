@@ -3,7 +3,8 @@
         "0": [
             "Probably swipe left on this one.",
             "...Ight Imma head out.",
-            "... They better be really hot."
+            "... They better be really hot.",
+            "Never gonna happen"
         ],
         "25": [
             "Better luck next time.",
@@ -13,7 +14,8 @@
         "50": [
             "Barely made it.", 
             "Made it by the skin of your teeth.",
-            "I mean, I GUESS..."
+            "I mean, I GUESS...",
+            "I mean, if there's no one else.."
         ], 
         "70": [
             "Cs get degrees.",
@@ -25,7 +27,12 @@
         ],
         "90": [
             "Wedding day wen?",
-            "When is the wedding??"
+            "When is the wedding??",
+            "Make sure you use protection ;)"
+        ],
+        "100": [
+            "Perfection *chef's kiss*",
+            "You may now delete *INSERT DATING APP HERE*"
         ]
     }
 }

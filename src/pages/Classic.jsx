@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
 import { Instructions } from "../components/molecules/index.js";
+import Data from "../data.json";
 
 const modalStyles = {
   content: {
@@ -9,7 +10,7 @@ const modalStyles = {
     right: "auto",
     bottom: "auto",
     marginRight: "-50%",
-    transform: "translate(-50%, -50%)",
+    transform: "translate(-50%, -50%)"
   },
 };
 
@@ -60,27 +61,26 @@ const Classic = () => {
   // const afterOpenModal = () => (subtitle.style.color = "red");
   const closeModal = () => setIsOpen(false);
   // end modal stuff
-
-  const [makeCount, setMakeCount] = useState(0);
-  const [mehCount, setMehCount] = useState(0);
   const [breakCount, setBreakCount] = useState(0);
-  const [questionCount, setQuestionCount] = useState(1);
-  const [winConditionCount, setWinConditionCount] = useState(0);
   const [completionStatus, setCompletionStatus] = useState(false);
   const [difficulty, setDifficulty] = useState("");
+  const [makeCount, setMakeCount] = useState(0);
+  const [mehCount, setMehCount] = useState(0);
+  const [questionCount, setQuestionCount] = useState(1);
   const [started, setStarted] = useState(false);
+  const [winConditionCount, setWinConditionCount] = useState(0);
 
   const compatibility = Math.ceil((makeCount / winConditionCount) * 100);
 
   const handleStarted = () => setStarted(true);
+  const updateBreakCount = () => setBreakCount(breakCount + 1);
   const updateMakeCount = () => setMakeCount(makeCount + 1);
   const updateMehCount = () => setMehCount(mehCount + 1);
-  const updateBreakCount = () => setBreakCount(breakCount + 1);
   const updateQuestionCount = () => setQuestionCount(questionCount + 1);
-
   const checkCompletion = () => {
     if (winConditionCount === questionCount) {
       setCompletionStatus(true);
+      updateCompletionMessage();
     }
   };
 
@@ -96,10 +96,33 @@ const Classic = () => {
     setQuestionCount(1);
   };
 
+  const randomCompletionMessage = (compatibility) => {
+    let completionMessageArrayLength = Data.messages[compatibility].length;
+    return Data.messages[compatibility][Math.floor(Math.random() * (completionMessageArrayLength))]
+  };
+
+  const updateCompletionMessage = () => {
+    if (compatibility < 25) {
+      return `${randomCompletionMessage(0)}`
+      } else if (compatibility < 50) {
+        return `${randomCompletionMessage(25)}`
+      } else if (compatibility < 70) {
+        return `${randomCompletionMessage(50)}`
+      } else if (compatibility < 80) {
+        return `${randomCompletionMessage(70)}`
+      } else if (compatibility < 90) {
+        return `${randomCompletionMessage(80)}`
+      } else if (compatibility < 100) {
+        return `${randomCompletionMessage(90)}`
+      } else {
+        return `${randomCompletionMessage(100)}`
+      }
+  }
+  
   const updateEasyDifficulty = () => {
     setDifficulty("easy");
     // switch back to 11 when done with testing
-    setWinConditionCount(1);
+    setWinConditionCount(2);
   };
 
   const updateEndlessDifficulty = () => {
@@ -149,7 +172,9 @@ const Classic = () => {
     "break count:",
     breakCount,
     "meh count",
-    mehCount
+    mehCount,
+    "compatibility",
+    compatibility
   );
 
   return (
@@ -168,7 +193,7 @@ const Classic = () => {
               ariaHideApp={false}
             >
               <Instructions />
-              <button onClick={closeModal}>close</button>
+              <button onClick={closeModal}>Close</button>
             </Modal>
             <br />
             <button onClick={handleStarted}>Play</button>
@@ -201,7 +226,9 @@ const Classic = () => {
               {completionStatus === true ? (
                 makeCount > mehCount && makeCount > breakCount ? (
                   <div>
-                    <h4>You Win!</h4>
+                    <h4>{
+                      updateCompletionMessage()
+                        }</h4>
                     <p>Compatibility: {compatibility}%</p>
                     <p>Makes: {makeCount}</p>
                     <p>Mehs: {mehCount}</p>
@@ -209,7 +236,9 @@ const Classic = () => {
                   </div>
                 ) : (
                   <div>
-                    <h4>You Lose!</h4>
+                    <h4>{
+                      updateCompletionMessage()
+                        }</h4>
                     <p>Compatibility: {compatibility}%</p>
                     <p>Makes: {makeCount}</p>
                     <p>Mehs: {mehCount}</p>
