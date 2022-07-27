@@ -23,16 +23,54 @@
         ],
         "80": [
             "Date 2 wen??",
-            "Start making out already."
+            "Start making out already.",
+            "You may now delete *INSERT DATING APP HERE*"
         ],
         "90": [
             "Wedding day wen?",
             "When is the wedding??",
-            "Make sure you use protection ;)"
+            "Don't forget to use protection ;)"
         ],
         "100": [
             "Perfection *chef's kiss*",
-            "You may now delete *INSERT DATING APP HERE*"
+            "It was meant to be :')"
         ]
-    }
+    },
+    "questions": [
+        "Do you like pineapple on pizza?",
+        "What is your love language?",
+        "Why do you think you are single? (if you are)",
+        "What do you hope to gain from dating?",
+        "What are your current personal goals?",
+        "What are 3 traits people you are dating must have?",
+        "Are you Gordon Ramsay in the kitchen?",
+        "What are you most grateful for?",
+        "Spontaneous adventure? Or a well-planned one?",
+        "What are your tastes in music?",
+        "How do you like your coffee?",
+        "What is your boba order?",
+        "Are you lactose intolerant?",
+        "What color do you think my aura is?",
+        "Do you believe in astrology?",
+        "Are you religious?",
+        "Name one thing that is a dealbreaker for you.",
+        "Do you stack your dishes and plates after eating at a restaurant?",
+        "Plant, fur, or real babies?",
+        "How important is sex in your relationship?",
+        "What are your dietary preferences?",
+        "What are your thoughts about the Trump administration?",
+        "How are you with finances?",
+        "Do you like Anime?",
+        "Besides work, what occupies your time?",
+        "Staying in vs. going out?",
+        "Have you ever cheated on someone before?",
+        "What is your definition of cheating?",
+        "Does size matter to you?",
+        "Where do you stand on marriage?",
+        "What are your thoughts about the Biden administration?",
+        "Where do you stand on the whole gun issue?",
+        "Is physical attraction important to you?",
+        "What type of intelligence do you find attractive, if at all?",
+        "Do you speak any other languages?"
+    ]
 }
