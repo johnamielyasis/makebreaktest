@@ -12,10 +12,10 @@ const ArrowContainer = styled.div`
     width: 7%;
 `
 
-const Arrow = styled.div`
-    height:100px;
-    width: 7%;
-`
+// const Arrow = styled.div`
+//     height:100px;
+//     width: 7%;
+// `
 
 const Indicator = () => {
     return (

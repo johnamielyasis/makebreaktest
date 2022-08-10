@@ -7469,10 +7469,10 @@
   dependencies:
     "picomatch" "^2.2.1"
 
-"recoil@^0.7.2":
-  "integrity" "sha512-OT4pI7FOUHcIoRtjsL5Lqq+lFFzQfir4MIbUkqyJ3nqv3WfBP1pHepyurqTsK5gw+T+I2R8+uOD28yH+Lg5o4g=="
-  "resolved" "https://registry.npmjs.org/recoil/-/recoil-0.7.2.tgz"
-  "version" "0.7.2"
+"recoil@^0.7.4":
+  "integrity" "sha512-sCXvQGMfSprkNU4ZRkJV4B0qFQSURJMgsICqY1952WRlg66NMwYqi6n67vhnhn0qw4zHU1gHXJuMvRDaiRNFZw=="
+  "resolved" "https://registry.npmjs.org/recoil/-/recoil-0.7.4.tgz"
+  "version" "0.7.4"
   dependencies:
     "hamt_plus" "1.0.2"
 

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+// import styled from 'styled-components';
 import { Gauge, Indicator } from '../components/molecules/index.js';
 
 const Temperature = () => {

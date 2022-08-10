@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import Modal from "react-modal";
 import { Instructions } from "../components/molecules/index.js";
 import Data from "../data.json";
+import {
+  atom, useRecoilState
+} from 'recoil';
 
 const modalStyles = {
   content: {
@@ -18,7 +21,16 @@ const questions = Data.questions.sort(function () {
   return Math.random() - 0.5;
 });
 
+const countState = atom({
+  key: 'countState',
+  default: 0
+})
+
 const Classic = () => {
+  const [count, setCount] = useRecoilState(countState);
+  const updateCount = () => {
+    setCount(count + 1);
+  }
   //modal stuff
   const [modalIsOpen, setIsOpen] = useState(false);
   const openModal = () => setIsOpen(true);
@@ -216,6 +228,8 @@ const Classic = () => {
           </div>
         )}
       </div>
+      {/* <h1>there is recoil here{count}</h1>
+      <button onClick={updateCount}>this makes the count go up, fuckos</button> */}
     </>
   );
 };
