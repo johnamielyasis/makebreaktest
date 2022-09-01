@@ -1,15 +1,17 @@
 import React from 'react';
-import styled from 'styled-components';
+import { styled, Button } from '@mui/material';
 
-const StyledButton = styled.button`
-`;
+const StyledButton = styled(Button)(({ color }) => ({
+    color: color,
+    borderRadius: '30px'
+}));
 
-const Button = (props) => {
+const ReusableButton = ({ onClick, children }) => {
     return (
-        <>
-            <StyledButton>{props.buttonName}</StyledButton>
-        </>
+            <StyledButton variant='contained' onClick={onClick}>
+                {children}
+            </StyledButton>
     );
 };
 
-export default Button;
+export default ReusableButton;
