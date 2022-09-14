@@ -3,6 +3,7 @@ import Container from '@mui/material/Container';
 import Grid2 from '@mui/material/Unstable_Grid2'; // Grid version 2
 import { ReactComponent as HeroImage } from '../assets/mb-logo-1557x1080.svg';
 import { default as LandingButtons } from '../components/molecules/LandingButtons.jsx';
+import { GameScreen } from './index.js'
 
 const Classic2 = () => {
     return (
@@ -27,6 +28,7 @@ const Classic2 = () => {
                 <LandingButtons />
             </Grid2>
         </Grid2>
+        <GameScreen />
         </Container>
     )
 }
