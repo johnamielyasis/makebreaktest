@@ -3,13 +3,25 @@ import React from "react";
 // import ButtonGroup from '@mui/material/ButtonGroup';
 import Container from "@mui/material/Container";
 import ReusableButton from "../atoms/Button";
-import { StyledTypography } from "../atoms";
+// import { StyledTypography } from "../atoms";
+import {
+  atom, useRecoilState
+  } from 'recoil';
+  import { classicAtom } from '../../recoil/index.js';
 
 const LandingButtons = () => {
+  const [ gameStart, setGameStart ] = useRecoilState(classicAtom);
+
+  const handleGameStart = () => {
+    const newGameStartStatus = { ...classicAtom, gameStart: true};
+    setGameStart(newGameStartStatus)
+  };
+  console.log('is it true here', gameStart);
+  
   return (
     <div>
       <Container>
-        <ReusableButton background={"#A8D1D6"}>PLAY</ReusableButton>
+        <ReusableButton background={"#A8D1D6"} onClick={() => handleGameStart()}>PLAY</ReusableButton>
         <br />
         <ReusableButton background={"#C5B3AA"}>SETTINGS</ReusableButton>
         <br />

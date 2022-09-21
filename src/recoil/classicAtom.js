@@ -4,5 +4,6 @@ export const classicAtom = atom({
     key: 'classicState',
     default: {
         questionIndex: 0,
+        gameStart: false,
     }
 })
