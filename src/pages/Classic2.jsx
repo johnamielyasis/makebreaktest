@@ -20,11 +20,10 @@ const Classic2 = () => {
                 gameStartStatus ? 
                     <GameScreen />
                 :
-                    <Grid2 container>
+                    <Grid2 container >
                         <Grid2 xs={12} display="flex" justifyContent="center" alignItems="center">
                             <HeroImage style={{
-                                // "height": "237px",
-                                // "width": "164px",
+                                "marginTop": "142px",
                                 "marginLeft": "79px",
                                 "marginRight": "59px"
                                 }} />

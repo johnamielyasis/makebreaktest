@@ -5,17 +5,21 @@ import Container from "@mui/material/Container";
 import ReusableButton from "../atoms/Button";
 // import { StyledTypography } from "../atoms";
 import {
-  atom, useRecoilState
+useRecoilState
   } from 'recoil';
-  import { classicAtom } from '../../recoil/index.js';
+import { classicAtom } from '../../recoil/index.js';
+import { helloWorlder, helloWorlder2 } from '../../utils/index';
 
 const LandingButtons = () => {
   const [ gameStart, setGameStart ] = useRecoilState(classicAtom);
 
   const handleGameStart = () => {
-    const newGameStartStatus = { ...classicAtom, gameStart: true};
-    setGameStart(newGameStartStatus)
+    const newGameStartStatus = { ...classicAtom, gameStart: true };
+    setGameStart(newGameStartStatus);
+    helloWorlder();
+    helloWorlder2();
   };
+
   console.log('is it true here', gameStart);
   
   return (

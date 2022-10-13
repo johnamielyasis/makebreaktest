@@ -20,7 +20,7 @@ const Navbar = () => {
         Classic
         </Route>
         <Route path="/classic2" element={<Classic2 />}>
-        Classic
+        Classic 2
         </Route>
         <Route path="/temperature" element={<Temperature />}>
         Temperature
