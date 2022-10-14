@@ -23,9 +23,11 @@ const Classic2 = () => {
                     <Grid2 container >
                         <Grid2 xs={12} display="flex" justifyContent="center" alignItems="center">
                             <HeroImage style={{
-                                "marginTop": "142px",
-                                "marginLeft": "79px",
-                                "marginRight": "59px"
+                                marginTop: "142px",
+                                marginLeft: "79px",
+                                marginRight: "59px",
+                                width: "237px",
+                                height: "164",
                                 }} />
                         </Grid2>
                         <Grid2 xs={12} display="flex" justifyContent="center" alignItems="center">
