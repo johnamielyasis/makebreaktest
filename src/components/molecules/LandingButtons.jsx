@@ -14,14 +14,13 @@ const LandingButtons = () => {
   const [ gameStart, setGameStart ] = useRecoilState(classicAtom);
 
   const handleGameStart = () => {
-    const newGameStartStatus = { ...classicAtom, gameStart: true };
+    const notGameStart = !gameStart.gameStart;
+    const newGameStartStatus = { ...classicAtom, gameStart: notGameStart };
     setGameStart(newGameStartStatus);
     helloWorlder();
     helloWorlder2();
   };
 
-  console.log('is it true here', gameStart);
-  
   return (
     <div>
       <Container>

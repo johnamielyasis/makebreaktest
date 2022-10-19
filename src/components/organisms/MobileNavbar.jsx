@@ -11,7 +11,7 @@ const MobileNavbar = () => {
         background: "red",
         height: "44px",
       }}>
-      <IconLogo />
+      <IconLogo onClick={() => {console.log('hw')}} />
       <Help />
     </div>
   );

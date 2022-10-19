@@ -1,6 +1,12 @@
 import { Button } from "../atoms/index.js";
+import { themes } from "../../constants/index.js";
 
 const GameButtons = () => {
+
+  const makeGreen = themes.colorMap.makeGreen;
+  const breakRed = themes.colorMap.breakRed;
+  const skipGrey = themes.colorMap.skipGrey;
+
   return (
     <div
       style={{
@@ -13,9 +19,9 @@ const GameButtons = () => {
         alignItems: "center"
       }}
     >
-      <Button>Make</Button>
-      <Button>Break</Button>
-      <Button>Skip</Button>
+      <Button background={makeGreen} onClick={() => console.log(themes)}>Make</Button>
+      <Button background={breakRed}>Break</Button>
+      <Button background={skipGrey}>Skip</Button>
     </div>
   );
 };
