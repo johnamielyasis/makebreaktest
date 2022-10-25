@@ -1,7 +1,13 @@
 import React from "react";
 import { IconLogo, Help } from "../molecules/index.js";
+import {
+  useRecoilState
+    } from 'recoil';
+import { classicAtom } from '../../recoil/index.js';
+import { handleGameStart } from "../../utils/helperFunctions.js";
 
 const MobileNavbar = () => {
+  const [ gameStart, setGameStart ] = useRecoilState(classicAtom);
   return (
     <div
       style={{
@@ -11,7 +17,7 @@ const MobileNavbar = () => {
         background: "red",
         height: "44px",
       }}>
-      <IconLogo onClick={() => {console.log('hw')}} />
+      <IconLogo onClick={() => {handleGameStart(gameStart, setGameStart, classicAtom)}} />
       <Help />
     </div>
   );

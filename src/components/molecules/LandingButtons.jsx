@@ -14,6 +14,7 @@ const LandingButtons = () => {
   const [ gameStart, setGameStart ] = useRecoilState(classicAtom);
 
   const handleGameStart = () => {
+    console.log(gameStart);
     const notGameStart = !gameStart.gameStart;
     const newGameStartStatus = { ...classicAtom, gameStart: notGameStart };
     setGameStart(newGameStartStatus);

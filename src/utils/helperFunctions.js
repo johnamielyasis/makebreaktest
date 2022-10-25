@@ -1,9 +1,10 @@
 
 
 
-export const handleGameStart = (oldAtom, setter) => {
-  const newGameStartStatus = { oldAtom, gameStart: true };
-  setter(newGameStartStatus);
+export const handleGameStart = (gameStart, setGameStart, classicAtom) => {
+  const notGameStart = !gameStart.gameStart;
+  const newGameStartStatus = { ...classicAtom, gameStart: notGameStart };
+  setGameStart(newGameStartStatus);
 };
 
 export function helloWorlder() {
