@@ -7,7 +7,6 @@ import { StyledTypography } from "../atoms/index.js";
 
 const QuestionCard = () => {
   const gridStyles = {
-    backgroundColor: "yellow",
   };
 
   return (

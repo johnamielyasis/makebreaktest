@@ -12,7 +12,6 @@ const GameButtons = () => {
       style={{
         display: "flex",
         flex: 2,
-        background: "green",
         flexDirection: "column",
         justifyContent: "center",
         alignContent: "center",
