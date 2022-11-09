@@ -3,7 +3,7 @@ import { atom } from 'recoil';
 export const classicAtom = atom({
     key: 'classicState',
     default: {
-        questionIndex: 0,
         gameStart: false,
+        questionIndex: 0,
     }
 })

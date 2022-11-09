@@ -6,7 +6,7 @@ import ReusableButton from "../atoms/Button";
 // import { StyledTypography } from "../atoms";
 import {
 useRecoilState
-  } from 'recoil';
+  } from "recoil";
 import { classicAtom } from '../../recoil/index.js';
 import { helloWorlder, helloWorlder2 } from '../../utils/index';
 
@@ -14,9 +14,8 @@ const LandingButtons = () => {
   const [ gameStart, setGameStart ] = useRecoilState(classicAtom);
 
   const handleGameStart = () => {
-    console.log(gameStart);
     const notGameStart = !gameStart.gameStart;
-    const newGameStartStatus = { ...classicAtom, gameStart: notGameStart };
+    const newGameStartStatus = { ...gameStart, gameStart: notGameStart };
     setGameStart(newGameStartStatus);
     helloWorlder();
     helloWorlder2();

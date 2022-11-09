@@ -1,13 +1,18 @@
 import React from "react";
-
-import Card from "@mui/material/Card";
 import Grid from "@mui/material/Grid";
-import Typography from "@mui/material/Typography";
 import { StyledTypography } from "../atoms/index.js";
+import { 
+  useRecoilState
+} from "recoil";
+import { classicAtom } from "../../recoil/index.js";
+import Data from "../../data.json";
 
 const QuestionCard = () => {
-  const gridStyles = {
-  };
+
+  const questions = Data.questions.sort(function () {
+    return Math.random() - 0.5;
+  });
+  const [ index, setIndex ] = useRecoilState(classicAtom);
 
   return (
     <Grid
@@ -15,7 +20,6 @@ const QuestionCard = () => {
       flexDirection="column"
       item
       xs={12}
-      sx={gridStyles}
       flex={1}
       display="flex"
       justifyContent="flex-end"
@@ -26,7 +30,7 @@ const QuestionCard = () => {
           fontSize: "16px",
         }}
       >
-        whatever goes here right
+        {questions[index.questionIndex]}
       </StyledTypography>
     </Grid>
   );
