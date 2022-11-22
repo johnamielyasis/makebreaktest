@@ -3,6 +3,7 @@ import { themes } from "../../constants/index.js";
 import { useRecoilState } from "recoil";
 
 import { classicAtom } from "../../recoil/index.js";
+import { handleIndex } from "../../utils/index";
 
 const GameButtons = () => {
 
@@ -12,12 +13,13 @@ const GameButtons = () => {
 
   const [ index, setIndex ] = useRecoilState(classicAtom);
 
-  const handleIndex = (change) => {
-    let newValue = change === 'increment' ? index.questionIndex + 1 : index.questionIndex - 1; 
-    let newIndex = { ...index, questionIndex: newValue };
-    setIndex(newIndex);
-    console.log(newIndex);
-  }
+  // const handleIndex = (state, setter, change) => {
+  //   let newValue = change === 'increment' ? index.questionIndex + 1 : index.questionIndex - 1; 
+  //   let newIndex = { ...index, questionIndex: newValue };
+  //   setIndex(newIndex);
+  //   console.log(newIndex);
+  // }
+
   return (
     <div
       style={{
@@ -29,9 +31,9 @@ const GameButtons = () => {
         alignItems: "center"
       }}
     >
-      <Button background={makeGreen} onClick={() => handleIndex('increment')}>Make</Button>
-      <Button background={breakRed}>Break</Button>
-      <Button background={skipGrey}>Skip</Button>
+      <Button background={makeGreen} onClick={() => handleIndex(index, setIndex, 'addIndex')}>Make</Button>
+      <Button background={breakRed} onClick={() => handleIndex(index, setIndex, 'addIndex')}>Break</Button>
+      <Button background={skipGrey} onClick={() => handleIndex(index, setIndex, 'addIndex')}>Skip</Button>
     </div>
   );
 };

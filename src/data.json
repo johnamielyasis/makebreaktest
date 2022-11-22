@@ -64,7 +64,7 @@
         "What are your dietary preferences?",
         "What are your thoughts about the Trump administration? (too specific to a president and time; therefore, is not sustainable)",
         "How are you with finances?",
-        "Do you like Anime? (asian edition exclusive questions)",
+        "Do you like Anime? (better for asian edition exclusive questions)",
         "Besides work, what occupies your time?",
         "Staying in vs. going out?",
         "Have you ever cheated on someone before?",
@@ -77,7 +77,7 @@
         "What type of intelligence do you find attractive, if at all?",
         "Do you speak any other languages?"
     ],
-    "settings": {
+    "questionDuration": {
         "easyQuestionDuration": 11,
         "mediumQuestionDuration": 13,
         "hardQuestionDuration": 15

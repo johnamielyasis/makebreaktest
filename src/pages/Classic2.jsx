@@ -12,7 +12,6 @@ import {
 const Classic2 = () => {
     const [ classicStates, setClassicStates ] = useRecoilState(classicAtom);
     const gameStartStatus = classicStates.gameStart;
-    console.log('this is gamestart', classicStates.gameStart);
     
     return (
         <Container>

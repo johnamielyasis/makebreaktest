@@ -1,16 +1,11 @@
-
-
-
-export const handleGameStart = (gameStart, setGameStart, classicAtom) => {
+export const handleGameStart = (gameStart, setGameStart) => {
   const notGameStart = !gameStart.gameStart;
-  const newGameStartStatus = { ...classicAtom, gameStart: notGameStart };
+  const newGameStartStatus = { ...gameStart, gameStart: notGameStart };
   setGameStart(newGameStartStatus);
 };
 
-export function helloWorlder() {
-  console.log("hw");
-}
-
-export function helloWorlder2() {
-  console.log("hw2");
+export const handleIndex = (state, setter, change) => {
+  let newValue = change === 'addIndex' ? state.questionIndex + 1 : state.questionIndex - 1; 
+  let newIndex = { ...state, questionIndex: newValue };
+  setter(newIndex);
 }

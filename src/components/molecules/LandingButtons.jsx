@@ -8,7 +8,6 @@ import {
 useRecoilState
   } from "recoil";
 import { classicAtom } from '../../recoil/index.js';
-import { helloWorlder, helloWorlder2 } from '../../utils/index';
 
 const LandingButtons = () => {
   const [ gameStart, setGameStart ] = useRecoilState(classicAtom);
@@ -17,8 +16,6 @@ const LandingButtons = () => {
     const notGameStart = !gameStart.gameStart;
     const newGameStartStatus = { ...gameStart, gameStart: notGameStart };
     setGameStart(newGameStartStatus);
-    helloWorlder();
-    helloWorlder2();
   };
 
   return (
