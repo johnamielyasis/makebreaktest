@@ -7,11 +7,12 @@ import {
 import { classicAtom } from "../../recoil/index.js";
 import Data from "../../data.json";
 
+const questions = Data.questions.sort(function () {
+  return Math.random() - 0.5;
+});
+
 const QuestionCard = () => {
 
-  const questions = Data.questions.sort(function () {
-    return Math.random() - 0.5;
-  });
 
   const [ index, setIndex ] = useRecoilState(classicAtom);
 
