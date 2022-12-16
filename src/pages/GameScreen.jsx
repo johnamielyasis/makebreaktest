@@ -5,7 +5,8 @@ import { GameButtons } from '../components/organisms/index.js';
 import styled from '@emotion/styled';
 
 const GameScreenWrapper = styled.div`
-    width: 100%;
+    margin: 0 auto;
+    max-width: 600px;
     height: 100vh;
     display: flex;
     flex-direction: column;
