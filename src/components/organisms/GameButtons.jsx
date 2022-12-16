@@ -3,7 +3,7 @@ import { themes } from "../../constants/index.js";
 import { useRecoilState } from "recoil";
 
 import { classicAtom } from "../../recoil/index.js";
-import { handleIndex } from "../../utils/index";
+import { handleIndex, handleCompletionStatus } from "../../utils/index";
 
 const GameButtons = () => {
 
@@ -20,6 +20,16 @@ const GameButtons = () => {
   //   console.log(newIndex);
   // }
 
+  console.log(index.gameComplete, index.numberOfQuestions, index.questionIndex);
+
+  const handleClick = () => {
+    handleIndex(index, setIndex, 'addIndex');
+    if (index.numberOfQuestions === (index.questionIndex + 1)) {
+      handleCompletionStatus(index, setIndex);
+    }
+  }
+
+
   return (
     <div
       style={{
@@ -31,7 +41,7 @@ const GameButtons = () => {
         alignItems: "center"
       }}
     >
-      <Button background={makeGreen} onClick={() => handleIndex(index, setIndex, 'addIndex')}>Make</Button>
+      <Button background={makeGreen} onClick={() => handleClick()}>Make</Button>
       <Button background={breakRed} onClick={() => handleIndex(index, setIndex, 'addIndex')}>Break</Button>
       <Button background={skipGrey} onClick={() => handleIndex(index, setIndex, 'addIndex')}>Skip</Button>
     </div>

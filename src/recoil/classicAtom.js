@@ -5,7 +5,7 @@ export const classicAtom = atom({
     default: {
         gameStart: false,
         gameComplete: false,
-        numberOfQuestions: 0,
+        numberOfQuestions: 12,
         questionIndex: 0,
         compatibility: 0
     }

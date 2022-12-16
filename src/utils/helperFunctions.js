@@ -1,3 +1,9 @@
+export const handleCompletionStatus = (state, setter) => {
+  const notCompletionStatus = !state.gameComplete;
+  const newCompletionStatus = { ...state, gameComplete: notCompletionStatus};
+  setter(newCompletionStatus);
+}
+
 export const handleGameStart = (gameStart, setGameStart) => {
   const notGameStart = !gameStart.gameStart;
   const newGameStartStatus = { ...gameStart, gameStart: notGameStart };
