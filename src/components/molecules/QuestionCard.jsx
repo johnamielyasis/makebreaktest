@@ -12,8 +12,6 @@ const questions = Data.questions.sort(function () {
 });
 
 const QuestionCard = () => {
-
-
   const [ index, setIndex ] = useRecoilState(classicAtom);
 
   return (

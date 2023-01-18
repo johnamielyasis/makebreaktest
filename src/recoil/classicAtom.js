@@ -7,6 +7,9 @@ export const classicAtom = atom({
         gameComplete: false,
         numberOfQuestions: 12,
         questionIndex: 0,
-        compatibility: 0
+        compatibility: 0,
+        makeCount: 0,
+        breakCount: 0,
+        skipCount: 0,
     }
-})
+});

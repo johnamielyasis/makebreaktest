@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Container from '@mui/material/Container';
 import Grid2 from '@mui/material/Unstable_Grid2'; // Grid version 2
 import { ReactComponent as HeroImage } from '../assets/mb-logo-1557x1080.svg';
@@ -8,19 +8,22 @@ import {
     atom, useRecoilState
     } from 'recoil';
     import { classicAtom } from '../recoil/index.js';
+import { handleCompletionStatus } from '../utils';
 
 const Classic2 = () => {
     const [ classicStates, setClassicStates ] = useRecoilState(classicAtom);
     const gameStartStatus = classicStates.gameStart;
-    const gameCompletionStatus = classicStates.gameComplete;
     
+    useEffect(() => {
+        if (classicStates.numberOfQuestions === classicStates.questionIndex) {
+            handleCompletionStatus(classicStates, setClassicStates);
+            console.log('THE GAME IS OVERRRRR');
+        }
+    }, [classicStates.questionIndex])
     return (
         <Container>
             {
                 gameStartStatus ? 
-                    gameCompletionStatus ?
-                    <CompletionScreen /> 
-                    :
                     <GameScreen />
                 :
                     <Grid2 container >
