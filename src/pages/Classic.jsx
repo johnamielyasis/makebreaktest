@@ -4,7 +4,7 @@ import { Instructions } from "../components/molecules/index.js";
 import Data from "../data.json";
 import ReusableButton from '../components/atoms/Button';
 import {
-  atom, useRecoilState
+  useRecoilState
 } from 'recoil';
 import { classicAtom } from '../recoil/index.js';
 
@@ -23,18 +23,9 @@ const questions = Data.questions.sort(function () {
   return Math.random() - 0.5;
 });
 
-const countState = atom({
-  key: 'countState',
-  default: 0
-})
-
 const Classic = () => {
   // recoil stuff
-  const [classicStates, setClassicStates] = useRecoilState(classicAtom);
-  const updateIndex = () => {
-    const newClassicStates = {...classicStates, questionIndex: classicStates.questionIndex + 1}
-    setClassicStates(newClassicStates)
-  }
+  const [classicStates] = useRecoilState(classicAtom);
   // const [count, setCount] = useRecoilState(countState);
   // const updateCount = () => {
   //   setCount(count + 1);
@@ -238,8 +229,6 @@ const Classic = () => {
           </div>
         )}
       </div>
-      <h1>{classicStates.questionIndex}</h1>
-      <button onClick={updateIndex}>update it bitch</button>
       {/* <h1>there is recoil here{count}</h1>
       <button onClick={updateCount}>this makes the count go up, fuckos</button> */}
     </>

@@ -1,12 +1,16 @@
 import { useRecoilState } from "recoil";
 import { classicAtom } from "../recoil/index.js";
-import { useEffect } from "react";
 
 const CompletionScreen = () => {
-  const [ gameState, setGameState ] = useRecoilState(classicAtom);
-  useEffect(() => {
-  }, [gameState]);
-  return <h1>{gameState.makeCount}</h1>;
+  const [gameState] = useRecoilState(classicAtom);
+  return (
+    <div>
+      <p>Compatibility rating: {gameState.compatibility}%</p>
+      <p>Makes: {gameState.makeCount}</p>
+      <p>Breaks: {gameState.breakCount}</p>
+      <p>Skips: {gameState.skipCount}</p>
+    </div>
+  );
 };
 
 export default CompletionScreen;
