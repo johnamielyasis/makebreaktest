@@ -18,9 +18,35 @@ const Classic2 = () => {
 
   const compatibility = Math.ceil((classicStates.makeCount / classicStates.numberOfQuestions) * 100);
 
+  // functions
+  const randomCompletionMessage = (compatibility) => {
+    let completionMessageArrayLength = Data.messages[compatibility].length;
+    return Data.messages[compatibility][Math.floor(Math.random() * (completionMessageArrayLength))]
+  };
+
+  const updateCompletionMessage = () => {
+    if (compatibility < 25) {
+      return `${randomCompletionMessage(0)}`
+      } else if (compatibility < 50) {
+        return `${randomCompletionMessage(25)}`
+      } else if (compatibility < 70) {
+        return `${randomCompletionMessage(50)}`
+      } else if (compatibility < 80) {
+        return `${randomCompletionMessage(70)}`
+      } else if (compatibility < 90) {
+        return `${randomCompletionMessage(80)}`
+      } else if (compatibility < 100) {
+        return `${randomCompletionMessage(90)}`
+      } else {
+        return `${randomCompletionMessage(100)}`
+      }
+  }
+
   useEffect(() => {
     if (classicStates.numberOfQuestions === classicStates.questionIndex) {
-      handleCompletionStatus(classicStates, setClassicStates, compatibility);
+      console.log(updateCompletionMessage());
+      const compatibilityMessage = updateCompletionMessage();
+      handleCompletionStatus(classicStates, setClassicStates, compatibility, compatibilityMessage);
       console.log("THE GAME IS OVERRRRR", console.log(compatibility));
     }
   }, [classicStates.questionIndex]);

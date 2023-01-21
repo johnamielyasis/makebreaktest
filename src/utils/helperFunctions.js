@@ -1,6 +1,6 @@
-export const handleCompletionStatus = (state, setter, compatibility) => {
+export const handleCompletionStatus = (state, setter, compatibility, compatibilityMessage) => {
   const notCompletionStatus = !state.gameComplete;
-  const newCompletionStatus = { ...state, gameComplete: notCompletionStatus, compatibility: compatibility };
+  const newCompletionStatus = { ...state, gameComplete: notCompletionStatus, compatibility: compatibility, compatibilityMessage: compatibilityMessage };
   console.log("cs", newCompletionStatus);
   setter(newCompletionStatus);
 };

@@ -8,6 +8,7 @@ export const classicAtom = atom({
         numberOfQuestions: 12,
         questionIndex: 0,
         compatibility: 0,
+        compatibilityMessage: '',
         makeCount: 0,
         breakCount: 0,
         skipCount: 0,
