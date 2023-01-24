@@ -44,7 +44,6 @@ const Classic2 = () => {
 
   useEffect(() => {
     if (classicStates.numberOfQuestions === classicStates.questionIndex) {
-      console.log(updateCompletionMessage());
       const compatibilityMessage = updateCompletionMessage();
       handleCompletionStatus(classicStates, setClassicStates, compatibility, compatibilityMessage);
       console.log("THE GAME IS OVERRRRR", console.log(compatibility));

@@ -3,11 +3,19 @@ import { classicAtom } from "../recoil/index.js";
 import { Typography } from "@mui/material";
 import styled from "@emotion/styled";
 
+const BreakContainer = styled.div`
+  align-items: center;
+  background-color: red;
+  display: flex;
+  justify-content: right;
+  height: 180px;
+  width: 390px;
+`;
+
 const CompatibilityContainer = styled.div`
   display: flex;
   height: 152px;
   width: 256px;
-  background-color: yellow;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -17,20 +25,31 @@ const FluidContainer = styled.div`
   display: flex;
   width: 100%;
   flex-direction: column;
-  background-color: green;
   height: 100vh;
   align-items: center;
 `;
 
-const LeftContainer = styled.div`
+const MakeContainer = styled.div`
+  align-items: center;
+  background-color: blue;
+  display: flex;
+  height: 180px;
+  width: 390px;
 `;
 
 const ResultContainer = styled.div`
   display: flex;
+  flex-direction: column;
 `;
 
-const RightContainer = styled.div`
+const SkipContainer = styled.div`
+  align-items: center;
+  background-color: grey;
+  display: flex;
+  height: 180px;
+  width: 390px;
 `;
+
 const CompletionScreen = () => {
   const [gameState] = useRecoilState(classicAtom);
   return (
@@ -51,7 +70,7 @@ const CompletionScreen = () => {
             letterSpacing: "0.3em",
           }}
         >
-          Compatibility
+          COMPATIBILITY
         </Typography>
         <br />
         <Typography
@@ -60,17 +79,19 @@ const CompletionScreen = () => {
             fontWeight: 300,
           }}
         >
-          "{gameState.compatibilityMessage}"
+          {gameState.compatibilityMessage}
         </Typography>
       </CompatibilityContainer>
       <ResultContainer>
-        <div>
-          <p>Makes: {gameState.makeCount}</p>
-          <p>Skips: {gameState.skipCount}</p>
-        </div>
-        <div>
-          <p>Breaks: {gameState.breakCount}</p>
-        </div>
+        <MakeContainer>
+          <p>MAKES: {gameState.makeCount}</p>
+        </MakeContainer>
+        <BreakContainer>
+          <p>BREAKS: {gameState.breakCount}</p>
+        </BreakContainer>
+        <SkipContainer>
+          <p>SKIPS: {gameState.skipCount}</p>
+        </SkipContainer>  
       </ResultContainer>
     </FluidContainer>
   );
