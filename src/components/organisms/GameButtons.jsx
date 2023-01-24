@@ -3,7 +3,7 @@ import { themes } from "../../constants/index.js";
 import { useRecoilState } from "recoil";
 import { useEffect } from "react";
 import { classicAtom } from "../../recoil/index.js";
-import { handleIndex, handleCompletionStatus } from "../../utils/index";
+import { handleIndex } from "../../utils/index";
 
 const GameButtons = () => {
   const makeGreen = themes.colorMap.makeGreen;
