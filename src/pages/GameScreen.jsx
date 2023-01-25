@@ -8,7 +8,7 @@ import { classicAtom } from "../recoil/index.js";
 
 const GameScreenWrapper = styled.div`
   margin: 0 auto;
-  max-width: 600px;
+  max-width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: column;

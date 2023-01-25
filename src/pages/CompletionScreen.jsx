@@ -1,7 +1,10 @@
+import { themes } from "../constants/index.js";
 import { useRecoilState } from "recoil";
 import { classicAtom } from "../recoil/index.js";
 import { Typography } from "@mui/material";
 import styled from "@emotion/styled";
+
+const makeGreen = themes.colorMap.makeGreen;
 
 const BreakContainer = styled.div`
   align-items: center;
@@ -9,13 +12,13 @@ const BreakContainer = styled.div`
   display: flex;
   justify-content: right;
   height: 180px;
-  width: 390px;
+  width: 100%;
 `;
 
 const CompatibilityContainer = styled.div`
   display: flex;
   height: 152px;
-  width: 256px;
+  width: 100%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -34,7 +37,21 @@ const MakeContainer = styled.div`
   background-color: blue;
   display: flex;
   height: 180px;
-  width: 390px;
+  width: 100%;
+`;
+
+const MakeCountContainer = styled.div`
+  align-items: center;
+  background-color: ${makeGreen};
+  border: solid 1px black;
+  border-radius: 0px 100px 100px 0px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  height: 180px;
+  left: 0px;
+  padding: 0px 32px;
+  position: absolute;
+  width: 240px;
 `;
 
 const ResultContainer = styled.div`
@@ -47,7 +64,7 @@ const SkipContainer = styled.div`
   background-color: grey;
   display: flex;
   height: 180px;
-  width: 390px;
+  width: 100%;
 `;
 
 const CompletionScreen = () => {
@@ -68,6 +85,7 @@ const CompletionScreen = () => {
             fontSize: "24px",
             fontWeight: 400,
             letterSpacing: "0.3em",
+            textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
           }}
         >
           COMPATIBILITY
@@ -84,14 +102,23 @@ const CompletionScreen = () => {
       </CompatibilityContainer>
       <ResultContainer>
         <MakeContainer>
-          <p>MAKES: {gameState.makeCount}</p>
+          <MakeCountContainer>
+            <Typography
+              style={{
+                fontSize: "16px",
+                fontWeight: 400,
+                letterSpacing: "0.3em",
+                lineHeight: "19px",
+              }}
+            >MAKES: {gameState.makeCount}</Typography>
+          </MakeCountContainer>
         </MakeContainer>
         <BreakContainer>
           <p>BREAKS: {gameState.breakCount}</p>
         </BreakContainer>
         <SkipContainer>
           <p>SKIPS: {gameState.skipCount}</p>
-        </SkipContainer>  
+        </SkipContainer>
       </ResultContainer>
     </FluidContainer>
   );
