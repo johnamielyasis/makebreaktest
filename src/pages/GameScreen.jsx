@@ -25,10 +25,6 @@ const GameScreen = () => {
         <CompletionScreen />
       ) : (
         <div>
-          <p>makes: {count.makeCount}</p>
-          <p>breaks: {count.breakCount}</p>
-          <p>skips: {count.skipCount}</p>
-          <p>q-index: {count.questionIndex}</p>
           <QuestionCard />
           <GameButtons />
         </div>

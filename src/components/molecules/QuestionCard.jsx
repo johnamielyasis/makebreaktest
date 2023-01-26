@@ -24,6 +24,7 @@ const QuestionCard = () => {
       display="flex"
       justifyContent="flex-end"
       alignItems="center"
+      margin="20% 0%"
     >
       <StyledTypography
         style={{

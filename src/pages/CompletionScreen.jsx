@@ -41,6 +41,7 @@ const CompatibilityContainer = styled.div`
   align-items: center;
   justify-content: center;
   margin: 40px auto;
+  text-align: center;
 `;
 const FluidContainer = styled.div`
   align-items: center;
@@ -127,8 +128,9 @@ const CompletionScreen = () => {
         <br />
         <Typography
           style={{
-            fontSize: "16px",
+            fontSize: "24px",
             fontWeight: 300,
+            margin: "0px auto"
           }}
         >
           {gameState.compatibilityMessage}
