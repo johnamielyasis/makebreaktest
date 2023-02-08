@@ -46,9 +46,9 @@ const Classic2 = () => {
     if (classicStates.numberOfQuestions === classicStates.questionIndex) {
       const compatibilityMessage = updateCompletionMessage();
       handleCompletionStatus(classicStates, setClassicStates, compatibility, compatibilityMessage);
-      console.log("THE GAME IS OVERRRRR", console.log(compatibility));
     }
   }, [classicStates.questionIndex]);
+
   return (
     <Container>
       {gameStartStatus ? (
