@@ -5,6 +5,7 @@ import Grid2 from "@mui/material/Unstable_Grid2"; // Grid version 2
 import { ReactComponent as HeroImage } from "../assets/mb-logo-1557x1080.svg";
 
 import Data from "../data.json";
+import { LandingNav } from "../components/organisms";
 import { default as LandingButtons } from "../components/molecules/LandingButtons.jsx";
 import { GameScreen } from "./index.js";
 import { useRecoilState } from "recoil";
@@ -21,24 +22,24 @@ const Classic2 = () => {
   // functions
   const randomCompletionMessage = (compatibility) => {
     let completionMessageArrayLength = Data.messages[compatibility].length;
-    return Data.messages[compatibility][Math.floor(Math.random() * (completionMessageArrayLength))]
+    return Data.messages[compatibility][Math.floor(Math.random() * (completionMessageArrayLength))];
   };
 
   const updateCompletionMessage = () => {
     if (compatibility < 25) {
       return `${randomCompletionMessage(0)}`
       } else if (compatibility < 50) {
-        return `${randomCompletionMessage(25)}`
+        return `${randomCompletionMessage(25)}`;
       } else if (compatibility < 70) {
-        return `${randomCompletionMessage(50)}`
+        return `${randomCompletionMessage(50)}`;
       } else if (compatibility < 80) {
-        return `${randomCompletionMessage(70)}`
+        return `${randomCompletionMessage(70)}`;
       } else if (compatibility < 90) {
-        return `${randomCompletionMessage(80)}`
+        return `${randomCompletionMessage(80)}`;
       } else if (compatibility < 100) {
-        return `${randomCompletionMessage(90)}`
+        return `${randomCompletionMessage(90)}`;
       } else {
-        return `${randomCompletionMessage(100)}`
+        return `${randomCompletionMessage(100)}`;
       }
   }
 
@@ -50,11 +51,12 @@ const Classic2 = () => {
   }, [classicStates.questionIndex]);
 
   return (
-    <Container>
+    <Container >
       {gameStartStatus ? (
         <GameScreen />
       ) : (
-        <Grid2 container>
+        <Grid2 container padding="45px 0px">
+          <LandingNav />
           <Grid2
             xs={12}
             display="flex"
@@ -63,9 +65,8 @@ const Classic2 = () => {
           >
             <HeroImage
               style={{
-                marginTop: "142px",
-                marginLeft: "79px",
-                marginRight: "59px",
+                marginTop: "40px ",
+                marginLeft: "16px",
                 width: "237px",
                 height: "164",
               }}
