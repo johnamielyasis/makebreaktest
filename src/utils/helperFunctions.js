@@ -45,3 +45,9 @@ export const handleIndex = (state, setter, change, action) => {
     setter(newIndex);
   }
 };
+
+export const handleGameScreenRender = (state, setter) => {
+  const notGameScreenRender = !state.gameScreenRender;
+  const newGameScreenRender = { ...state, gameScreenRender: notGameScreenRender };
+  setter(newGameScreenRender);
+};

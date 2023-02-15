@@ -1,6 +1,6 @@
 import React from "react";
 import { MdOutlineArrowBackIosNew } from "react-icons/md";
-import { handleGameStart } from "../../utils";
+import { handleGameScreenRender } from "../../utils";
 import { IconLogo, Help } from "../molecules/index.js";
 import { useRecoilState } from "recoil";
 import { classicAtom } from "../../recoil/index.js";
@@ -8,7 +8,7 @@ import Typography from "@mui/material/Typography";
 
 const MobileNavbar = () => {
   const [classicStates, setClassicStates] = useRecoilState(classicAtom);
-  const hasGameStarted = classicStates.gameStart;
+  const hasGameStarted = classicStates.gameScreenRender;
 
   return (
     <div
@@ -26,7 +26,7 @@ const MobileNavbar = () => {
             display: "flex",
             alignItems: "center",
           }}
-          onClick={() => handleGameStart(classicStates, setClassicStates)}
+          onClick={() => handleGameScreenRender(classicStates, setClassicStates)}
         >
           <MdOutlineArrowBackIosNew
             style={{

@@ -15,7 +15,7 @@ import { handleCompletionStatus } from "../utils";
 
 const Classic2 = () => {
   const [classicStates, setClassicStates] = useRecoilState(classicAtom);
-  const gameStartStatus = classicStates.gameStart;
+  const gameStartStatus = classicStates.gameScreenRender;
 
   const compatibility = Math.ceil((classicStates.makeCount / classicStates.numberOfQuestions) * 100);
 
@@ -65,7 +65,7 @@ const Classic2 = () => {
           >
             <HeroImage
               style={{
-                marginTop: "40px ",
+                marginTop: "56px",
                 marginLeft: "16px",
                 width: "237px",
                 height: "164",
