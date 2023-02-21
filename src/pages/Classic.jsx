@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import Modal from "react-modal";
 import { Instructions } from "../components/molecules/index.js";
 import Data from "../data.json";
+import ReusableButton from '../components/atoms/Button';
 import {
-  atom, useRecoilState
+  useRecoilState
 } from 'recoil';
+import { classicAtom } from '../recoil/index.js';
 
 const modalStyles = {
   content: {
@@ -21,16 +23,13 @@ const questions = Data.questions.sort(function () {
   return Math.random() - 0.5;
 });
 
-const countState = atom({
-  key: 'countState',
-  default: 0
-})
-
 const Classic = () => {
-  const [count, setCount] = useRecoilState(countState);
-  const updateCount = () => {
-    setCount(count + 1);
-  }
+  // recoil stuff
+  const [classicStates] = useRecoilState(classicAtom);
+  // const [count, setCount] = useRecoilState(countState);
+  // const updateCount = () => {
+  //   setCount(count + 1);
+  // }
   //modal stuff
   const [modalIsOpen, setIsOpen] = useState(false);
   const openModal = () => setIsOpen(true);
@@ -150,16 +149,18 @@ const Classic = () => {
     "meh count",
     mehCount,
     "compatibility",
-    compatibility
+    compatibility,
+    "classic states",
+    classicStates
   );
-
+    
   return (
     <>
       <div>
         <h2>Classic Mode</h2>
         {started === false ? (
           <div>
-            <button onClick={openModal}>Instructions</button>
+            <ReusableButton onClick={openModal}>Instructions</ReusableButton>
             <Modal
               isOpen={modalIsOpen}
               // onAfterOpen={afterOpenModal}
@@ -169,20 +170,20 @@ const Classic = () => {
               ariaHideApp={false}
             >
               <Instructions />
-              <button onClick={closeModal}>Close</button>
+              <ReusableButton onClick={closeModal}>Close</ReusableButton>
             </Modal>
             <br />
-            <button onClick={handleStarted}>Play</button>
+            <ReusableButton onClick={handleStarted}>Play</ReusableButton>
           </div>
         ) : (
           <div>
             {difficulty === "" ? (
               <div>
                 <h3>Select Difficulty Level:</h3>
-                <button onClick={updateEasyDifficulty}>Easy</button>
-                <button onClick={updateMildDifficulty}>Mild</button>
-                <button onClick={updateHardDifficulty}>Hard</button>
-                <button onClick={updateEndlessDifficulty}>Endless</button>
+                <ReusableButton onClick={updateEasyDifficulty}>Easy</ReusableButton>
+                <ReusableButton onClick={updateMildDifficulty}>Mild</ReusableButton>
+                <ReusableButton onClick={updateHardDifficulty}>Hard</ReusableButton>
+                <ReusableButton onClick={updateEndlessDifficulty}>Endless</ReusableButton>
               </div>
             ) : completionStatus ? (
               <div>
