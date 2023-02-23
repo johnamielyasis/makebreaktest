@@ -1,15 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.e6c13ad2.css",
-    "main.js": "/static/js/main.b6a05994.js",
+    "main.css": "/static/css/main.c0feab5d.css",
+    "main.js": "/static/js/main.b44c7852.js",
     "static/js/787.7003d524.chunk.js": "/static/js/787.7003d524.chunk.js",
+    "static/media/mb-logo-1557x1080.svg": "/static/media/mb-logo-1557x1080.36e0bd49be44d9264a127848e1226ee9.svg",
+    "static/media/make or break_logo_1374.17x1080px.svg": "/static/media/make or break_logo_1374.17x1080px.d93f51f01d79695159c1a66c18df175a.svg",
     "index.html": "/index.html",
-    "main.e6c13ad2.css.map": "/static/css/main.e6c13ad2.css.map",
-    "main.b6a05994.js.map": "/static/js/main.b6a05994.js.map",
+    "main.c0feab5d.css.map": "/static/css/main.c0feab5d.css.map",
+    "main.b44c7852.js.map": "/static/js/main.b44c7852.js.map",
     "787.7003d524.chunk.js.map": "/static/js/787.7003d524.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e6c13ad2.css",
-    "static/js/main.b6a05994.js"
+    "static/css/main.c0feab5d.css",
+    "static/js/main.b44c7852.js"
   ]
 }
