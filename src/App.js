@@ -12,7 +12,7 @@ function App() {
       <h2>Select a game mode</h2> */}
       <Router>
         <Routes>
-          <Route path="/" element={<Classic />} />
+          <Route path="/" element={<Classic2 />} />
           <Route path="/classic2" element={<Classic2 />} />
             
           {/* <Route path="/temperature" element={<Temperature />}>
