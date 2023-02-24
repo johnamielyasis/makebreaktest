@@ -51,3 +51,10 @@ export const handleGameScreenRender = (state, setter) => {
   const newGameScreenRender = { ...state, gameScreenRender: notGameScreenRender };
   setter(newGameScreenRender);
 };
+
+export const handleGameBeginning = (state, setter) => {
+  const notGameScreenRender = !state.gameScreenRender;
+  const notGameStarted = !state.gameStart;
+  const gameHasBegun = { ...state, gameScreenRender: notGameScreenRender, gameStart: notGameStarted };
+  setter(gameHasBegun);
+};

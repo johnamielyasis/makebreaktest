@@ -1,5 +1,5 @@
 import { classicAtom } from "../../recoil/index.js";
-import { handleGameStart } from "../../utils";
+import { handleGameScreenRender, handleGameStart } from "../../utils";
 import styled from "@emotion/styled";
 import { MdArrowForwardIos } from "react-icons/md";
 import Typography from "@mui/material/Typography";
@@ -18,12 +18,13 @@ const NavDiv = styled.div`
 
 const LandingNav = () => {
   const [classicStates, setClassicStates] = useRecoilState(classicAtom);
-  const hasGameStarted = classicStates.gameStart
+  const hasGameStarted = classicStates.gameStart;
+
   return (
     <LandingNavWrapper>
         {hasGameStarted ? 
         (<NavDiv
-        onClick={() => handleGameStart(classicStates, setClassicStates)}>
+        onClick={() => handleGameScreenRender(classicStates, setClassicStates)}>
           <Typography
             style={{
               color: "black",

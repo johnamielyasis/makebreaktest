@@ -1,8 +1,6 @@
-import { Navbar } from "./components/organisms/index";
-
 import GlobalStyle from "./theme/globalStyles";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import { Classic, Temperature, Gradient, Classic2 } from "./pages/index.js";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Gradient, Classic2 } from "./pages/index.js";
 
 function App() {
   return (
@@ -13,8 +11,6 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Classic2 />} />
-          <Route path="/classic2" element={<Classic2 />} />
-            
           {/* <Route path="/temperature" element={<Temperature />}>
             Temperature
           </Route> */}

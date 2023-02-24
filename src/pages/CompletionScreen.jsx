@@ -6,7 +6,6 @@ import styled from "@emotion/styled";
 
 const breakRed = themes.colorMap.breakRed;
 const makeGreen = themes.colorMap.makeGreen;
-const skipGrey = themes.colorMap.skipGrey;
 
 const BreakContainer = styled.div`
   align-items: center;
