@@ -15,14 +15,18 @@ const LandingButtons = () => {
           marginTop: "40px",
         }}
       >
-        <ReusableButton
-          background={"#A8D1D6"}
-          onClick={() => {
-            handleGameBeginning(gameStart, setGameStart);
-          }}
-        >
-          PLAY
-        </ReusableButton>
+        {gameStart.gameStart ? (
+          <ReusableButton>CONTINUE</ReusableButton>
+        ) : (
+          <ReusableButton
+            background={"#A8D1D6"}
+            onClick={() => {
+              handleGameBeginning(gameStart, setGameStart);
+            }}
+          >
+            PLAY
+          </ReusableButton>
+        )}
         <br />
         <ReusableButton background={"#C5B3AA"}>SETTINGS</ReusableButton>
         <br />
