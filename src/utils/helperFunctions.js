@@ -58,3 +58,8 @@ export const handleGameBeginning = (state, setter) => {
   const gameHasBegun = { ...state, gameScreenRender: notGameScreenRender, gameStart: notGameStarted };
   setter(gameHasBegun);
 };
+
+export const handleReset = (state, setter) => {
+  const resetState = { ...state, makeCount: 0, breakCount: 0, skipCount: 0, questionIndex: 0, gameStart: true, gameComplete: false, gameScreenRender: true};
+  setter(resetState);
+}

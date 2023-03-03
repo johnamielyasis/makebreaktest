@@ -7,7 +7,7 @@ import Typography from "@mui/material/Typography";
 import ReusableButton from "../atoms/Button";
 import { useRecoilState } from "recoil";
 import { classicAtom } from "../../recoil/index.js";
-import { handleGameBeginning } from "../../utils";
+import { handleGameBeginning, handleReset } from "../../utils";
 
 const modalStyle = {
   position: "absolute",
@@ -34,8 +34,8 @@ const LandingButtons = () => {
         }}
       >
         {gameStart.gameStart ? (
-          <div>
-            <ReusableButton onClick={handleOpen}>CONTINUE</ReusableButton>
+          <>
+            <ReusableButton onClick={handleOpen}>RESTART</ReusableButton>
             <Modal
               open={open}
               onClose={handleClose}
@@ -78,6 +78,7 @@ const LandingButtons = () => {
                         size: "16px",
                         weight: 400,
                       }}
+                      onClick={() => handleReset(gameStart, setGameStart)}
                     >
                       YES
                     </Typography>
@@ -99,7 +100,7 @@ const LandingButtons = () => {
                 </Box>
               </Box>
             </Modal>
-          </div>
+          </>
         ) : (
           <ReusableButton
             background={"#A8D1D6"}

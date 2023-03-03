@@ -14,7 +14,7 @@ const BreakContainer = styled.div`
   height: 180px;
   position: absolute;
   right: 0px;
-  top: 464px;
+  top: 440px;
   width: 100%;
   z-index: 1;
 `;
@@ -25,7 +25,7 @@ const BreakCountContainer = styled.div`
   border-radius: 100px 0px 0px 100px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   display: flex;
-  height: 180px;
+  height: 136px;
   justify-content: center;
   padding: 0px 32px;
   position: absolute;
@@ -64,7 +64,7 @@ const MakeCountContainer = styled.div`
   border-radius: 0px 100px 100px 0px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   display: flex;
-  height: 180px;
+  height: 136px;
   justify-content: center;
   left: 0px;
   padding: 0px 32px;
@@ -82,7 +82,7 @@ const SkipContainer = styled.div`
   display: flex;
   height: 180px;
   left: 0px;
-  top: 608px;
+  top: 532px;
   position: absolute;
   width: 100%;
 `;
@@ -93,7 +93,7 @@ const SkipCountContainer = styled.div`
   border-radius: 0px 100px 100px 0px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   display: flex;
-  height: 180px;
+  height: 136px;
   justify-content: center;
   left: 0px;
   padding: 0px 32px;
