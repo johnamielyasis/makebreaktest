@@ -14,7 +14,7 @@ const BreakContainer = styled.div`
   height: 180px;
   position: absolute;
   right: 0px;
-  top: 440px;
+  top: 376px;
   width: 100%;
   z-index: 1;
 `;
@@ -82,7 +82,7 @@ const SkipContainer = styled.div`
   display: flex;
   height: 180px;
   left: 0px;
-  top: 532px;
+  top: 490px;
   position: absolute;
   width: 100%;
 `;
