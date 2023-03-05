@@ -34,12 +34,12 @@ const BreakCountContainer = styled.div`
 
 const CompatibilityContainer = styled.div`
   display: flex;
-  height: 152px;
+  height: 136px;
   width: 100%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 40px auto;
+  margin: 16px auto;
   text-align: center;
 `;
 const FluidContainer = styled.div`
