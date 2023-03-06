@@ -39,6 +39,7 @@ const LandingNav = () => {
           <MdArrowForwardIos
             style={{
               fontSize: "28px",
+              margin: "0px 24px 0px 0px"
             }}
           />
         </NavDiv>) : ''
