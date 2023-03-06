@@ -31,6 +31,7 @@ const MobileNavbar = () => {
           <MdOutlineArrowBackIosNew
             style={{
               fontSize: "28px",
+              margin: "0px 8px",
             }}
           />
           <Typography

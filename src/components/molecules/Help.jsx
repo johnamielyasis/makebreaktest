@@ -1,8 +1,4 @@
 import React from "react";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
-import { StyledTypography } from "../atoms/index";
-import { flexbox } from "@mui/system";
 
 const Help = () => {
   return (
@@ -15,7 +11,8 @@ const Help = () => {
         color: "black",
         textAlign: "center",
         lineHeight: "44px",
-        verticalAlign: "middle"
+        verticalAlign: "middle",
+        margin: "0px 16px",
       }}
     >
       <div>

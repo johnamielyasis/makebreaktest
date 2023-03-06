@@ -7,25 +7,25 @@ import styled from "@emotion/styled";
 const breakRed = themes.colorMap.breakRed;
 const makeGreen = themes.colorMap.makeGreen;
 
-const BreakContainer = styled.div`
+const SkipContainer = styled.div`
   align-items: center;
   display: flex;
   justify-content: right;
   height: 180px;
   position: absolute;
   right: 0px;
-  top: 376px;
+  top: 296px;
   width: 100%;
   z-index: 1;
 `;
 
-const BreakCountContainer = styled.div`
+const SkipCountContainer = styled.div`
   align-items: center;
   background-color: rgba(197,179,170,0.7);
   border-radius: 100px 0px 0px 100px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   display: flex;
-  height: 136px;
+  height: 112px;
   justify-content: center;
   padding: 0px 32px;
   position: absolute;
@@ -37,9 +37,7 @@ const CompatibilityContainer = styled.div`
   height: 136px;
   width: 100%;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 16px auto;
+  margin: 0px auto;
   text-align: center;
 `;
 const FluidContainer = styled.div`
@@ -53,7 +51,7 @@ const FluidContainer = styled.div`
 const MakeContainer = styled.div`
   align-items: center;
   display: flex;
-  height: 180px;
+  height: 128px;
   width: 100%;
 `;
 
@@ -64,7 +62,7 @@ const MakeCountContainer = styled.div`
   border-radius: 0px 100px 100px 0px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   display: flex;
-  height: 136px;
+  height: 112px;
   justify-content: center;
   left: 0px;
   padding: 0px 32px;
@@ -77,23 +75,23 @@ const ResultContainer = styled.div`
   flex-direction: column;
 `;
 
-const SkipContainer = styled.div`
+const BreakContainer = styled.div`
   align-items: center;
   display: flex;
   height: 180px;
   left: 0px;
-  top: 490px;
+  top: 400px;
   position: absolute;
   width: 100%;
 `;
 
-const SkipCountContainer = styled.div`
+const BreakCountContainer = styled.div`
   align-items: center;
   background-color: ${breakRed};
   border-radius: 0px 100px 100px 0px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   display: flex;
-  height: 136px;
+  height: 112px;
   justify-content: center;
   left: 0px;
   padding: 0px 32px;
@@ -103,6 +101,7 @@ const SkipCountContainer = styled.div`
 
 const CompletionScreen = () => {
   const [gameState] = useRecoilState(classicAtom);
+
   return (
     <FluidContainer>
       <CompatibilityContainer>
@@ -119,7 +118,7 @@ const CompletionScreen = () => {
             fontSize: "24px",
             fontWeight: 400,
             letterSpacing: "0.3em",
-            textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+            // textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
           }}
         >
           COMPATIBILITY
@@ -150,8 +149,8 @@ const CompletionScreen = () => {
             </Typography>
           </MakeCountContainer>
         </MakeContainer>
-        <BreakContainer>
-          <BreakCountContainer>
+        <SkipContainer>
+          <SkipCountContainer>
                 <Typography
                   style={{
                     fontSize: "16px",
@@ -162,10 +161,10 @@ const CompletionScreen = () => {
                 >
                   SKIPS: {gameState.skipCount}
                 </Typography>
-          </BreakCountContainer>
-        </BreakContainer>
-        <SkipContainer>
-          <SkipCountContainer>
+          </SkipCountContainer>
+        </SkipContainer>
+        <BreakContainer>
+          <BreakCountContainer>
             <Typography
               style={{
                 fontSize: "16px",
@@ -176,8 +175,8 @@ const CompletionScreen = () => {
             >
               BREAKS: {gameState.breakCount}
             </Typography>
-          </SkipCountContainer>
-        </SkipContainer>
+          </BreakCountContainer>
+        </BreakContainer>
       </ResultContainer>
     </FluidContainer>
   );
