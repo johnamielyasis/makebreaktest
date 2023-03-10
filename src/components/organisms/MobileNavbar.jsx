@@ -9,6 +9,7 @@ import Typography from "@mui/material/Typography";
 const MobileNavbar = () => {
   const [classicStates, setClassicStates] = useRecoilState(classicAtom);
   const hasGameStarted = classicStates.gameScreenRender;
+  const hasGameEnded = classicStates.gameComplete;
 
   return (
     <div
@@ -20,36 +21,40 @@ const MobileNavbar = () => {
         height: "44px",
       }}
     >
-      {hasGameStarted ? (
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-          }}
-          onClick={() => handleGameScreenRender(classicStates, setClassicStates)}
-        >
-          <MdOutlineArrowBackIosNew
-            style={{
-              fontSize: "28px",
-              margin: "0px 8px",
-            }}
-          />
-          <Typography
-            style={{
-              color: "black",
-              letter: "30%",
-              letterSpacing: "0.3em",
-              lineHeight: "18.75px",
-              fontSize: "14px",
-            }}
-          >
-            BACK
-          </Typography>
-        </div>
+      {hasGameEnded ? (
+        ""
       ) : (
-        <IconLogo />
+        <>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+            }}
+            onClick={() =>
+              handleGameScreenRender(classicStates, setClassicStates)
+            }
+          >
+            <MdOutlineArrowBackIosNew
+              style={{
+                fontSize: "28px",
+                margin: "0px 8px",
+              }}
+            />
+            <Typography
+              style={{
+                color: "black",
+                letter: "30%",
+                letterSpacing: "0.3em",
+                lineHeight: "18.75px",
+                fontSize: "14px",
+              }}
+            >
+              BACK
+            </Typography>
+          </div>
+          <Help />
+        </>
       )}
-      <Help />
     </div>
   );
 };

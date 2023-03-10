@@ -1,86 +1,19 @@
 import { themes } from "../constants/index.js";
 import { useRecoilState } from "recoil";
 import { classicAtom } from "../recoil/index.js";
+import { Button } from "@mui/material";
 import { Typography } from "@mui/material";
 import styled from "@emotion/styled";
 
 const breakRed = themes.colorMap.breakRed;
 const makeGreen = themes.colorMap.makeGreen;
 
-const SkipContainer = styled.div`
-  align-items: center;
-  display: flex;
-  justify-content: right;
-  height: 180px;
-  position: absolute;
-  right: 0px;
-  top: 296px;
-  width: 100%;
-  z-index: 1;
-`;
-
-const SkipCountContainer = styled.div`
-  align-items: center;
-  background-color: rgba(197,179,170,0.7);
-  border-radius: 100px 0px 0px 100px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  display: flex;
-  height: 112px;
-  justify-content: center;
-  padding: 0px 32px;
-  position: absolute;
-  width: 180px;
-`;
-
-const CompatibilityContainer = styled.div`
-  display: flex;
-  height: 136px;
-  width: 100%;
-  flex-direction: column;
-  margin: 0px auto;
-  text-align: center;
-`;
-const FluidContainer = styled.div`
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  width: 100%;
-`;
-
-const MakeContainer = styled.div`
-  align-items: center;
-  display: flex;
-  height: 128px;
-  width: 100%;
-`;
-
-const MakeCountContainer = styled.div`
-  align-items: center;
-  background-color: ${makeGreen};
-  border: solid 1px black;
-  border-radius: 0px 100px 100px 0px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  display: flex;
-  height: 112px;
-  justify-content: center;
-  left: 0px;
-  padding: 0px 32px;
-  position: absolute;
-  width: 240px;
-`;
-
-const ResultContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
 const BreakContainer = styled.div`
   align-items: center;
   display: flex;
   height: 180px;
   left: 0px;
-  top: 400px;
+  top: 500px;
   position: absolute;
   width: 100%;
 `;
@@ -91,12 +24,85 @@ const BreakCountContainer = styled.div`
   border-radius: 0px 100px 100px 0px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   display: flex;
-  height: 112px;
+  height: 144px;
   justify-content: center;
   left: 0px;
   padding: 0px 32px;
   position: absolute;
   width: 184px;
+`;
+
+const CompatibilityContainer = styled.div`
+  display: flex;
+  height: 190px;
+  width: 100%;
+  flex-direction: column;
+  margin: 0px auto;
+  text-align: center;
+`;
+const FluidContainer = styled.div`
+  align-items: center;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+`;
+
+const MakeContainer = styled.div`
+  align-items: center;
+  display: flex;
+  height: 144px;
+  width: 100%;
+`;
+
+const MakeCountContainer = styled.div`
+  align-items: center;
+  background-color: ${makeGreen};
+  border: solid 1px black;
+  border-radius: 0px 100px 100px 0px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  height: 144px;
+  justify-content: center;
+  left: 0px;
+  padding: 0px 32px;
+  position: absolute;
+  width: 240px;
+`;
+
+const NewGameContainer = styled.div`
+  margin-top: auto;
+`;
+
+const ResultContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const SkipContainer = styled.div`
+  align-items: center;
+  display: flex;
+  justify-content: right;
+  height: 180px;
+  position: absolute;
+  right: 0px;
+  top: 380px;
+  width: 100%;
+  z-index: 1;
+`;
+
+const SkipCountContainer = styled.div`
+  align-items: center;
+  background-color: rgba(197, 179, 170, 0.7);
+  border-radius: 100px 0px 0px 100px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  height: 144px;
+  justify-content: center;
+  padding: 0px 32px;
+  position: absolute;
+  width: 180px;
 `;
 
 const CompletionScreen = () => {
@@ -128,7 +134,7 @@ const CompletionScreen = () => {
           style={{
             fontSize: "24px",
             fontWeight: 300,
-            margin: "0px auto"
+            margin: "32px auto",
           }}
         >
           {gameState.compatibilityMessage}
@@ -151,16 +157,16 @@ const CompletionScreen = () => {
         </MakeContainer>
         <SkipContainer>
           <SkipCountContainer>
-                <Typography
-                  style={{
-                    fontSize: "16px",
-                    fontWeight: 400,
-                    letterSpacing: "0.3em",
-                    lineHeight: "19px",
-                  }}
-                >
-                  SKIPS: {gameState.skipCount}
-                </Typography>
+            <Typography
+              style={{
+                fontSize: "16px",
+                fontWeight: 400,
+                letterSpacing: "0.3em",
+                lineHeight: "19px",
+              }}
+            >
+              SKIPS: {gameState.skipCount}
+            </Typography>
           </SkipCountContainer>
         </SkipContainer>
         <BreakContainer>
@@ -178,6 +184,16 @@ const CompletionScreen = () => {
           </BreakCountContainer>
         </BreakContainer>
       </ResultContainer>
+      <NewGameContainer>
+        <Button><Typography
+          style={{
+            fontSize: "24px",
+            fontWeight: 560,
+          }}
+        >
+          NEW GAME?
+        </Typography></Button>
+      </NewGameContainer>
     </FluidContainer>
   );
 };
