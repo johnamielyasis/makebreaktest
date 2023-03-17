@@ -269,7 +269,7 @@ const CompletionScreen = () => {
             style={{
               fontSize: "24px",
               fontWeight: 560,
-              margin: "0px auto 20%",
+              margin: "18px auto",
             }}
           >
             NEW GAME?
