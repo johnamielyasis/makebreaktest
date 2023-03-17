@@ -1,12 +1,28 @@
+import React from "react";
 import { themes } from "../constants/index.js";
 import { useRecoilState } from "recoil";
 import { classicAtom } from "../recoil/index.js";
 import { Button } from "@mui/material";
 import { Typography } from "@mui/material";
+import Box from "@mui/material/Box";
+import Modal from "@mui/material/Modal";
 import styled from "@emotion/styled";
+import { handleReset } from "../utils";
+
 
 const breakRed = themes.colorMap.breakRed;
 const makeGreen = themes.colorMap.makeGreen;
+
+const modalStyle = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 400,
+  bgcolor: "background.paper",
+  boxShadow: 24,
+  p: 4,
+};
 
 const BreakContainer = styled.div`
   align-items: center;
@@ -106,7 +122,10 @@ const SkipCountContainer = styled.div`
 `;
 
 const CompletionScreen = () => {
-  const [gameState] = useRecoilState(classicAtom);
+  const [gameState, setGameState] = useRecoilState(classicAtom);
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   return (
     <FluidContainer>
@@ -134,7 +153,7 @@ const CompletionScreen = () => {
           style={{
             fontSize: "24px",
             fontWeight: 300,
-            margin: "32px auto",
+            margin: "auto",
           }}
         >
           {gameState.compatibilityMessage}
@@ -185,14 +204,77 @@ const CompletionScreen = () => {
         </BreakContainer>
       </ResultContainer>
       <NewGameContainer>
-        <Button><Typography
-          style={{
-            fontSize: "24px",
-            fontWeight: 560,
-          }}
+        <Modal
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="restart/continue game modal"
+          aria-describedby="choose to either restart the game or return to previous screen"
         >
-          NEW GAME?
-        </Typography></Button>
+          <Box
+            sx={modalStyle}
+            display="flex"
+            alignItems="center"
+            flexDirection="column"
+          >
+            <Typography
+              style={{
+                align: "center",
+                color: "black",
+                letter: "30%",
+                letterSpacing: "0.3em",
+                lineHeight: "18.75px",
+                marginBottom: "24px",
+                size: "16px",
+                weight: 400,
+              }}
+            >
+              START A NEW GAME?
+            </Typography>
+            <Box minWidth="40%" display="flex" justifyContent="space-between">
+              <Button variant="contained" alignItems="center">
+                <Typography
+                  style={{
+                    align: "center",
+                    color: "white",
+                    letter: "30%",
+                    letterSpacing: "0.3em",
+                    lineHeight: "18.75px",
+                    size: "16px",
+                    weight: 400,
+                  }}
+                  onClick={() => handleReset(gameState, setGameState)}
+                >
+                  YES
+                </Typography>
+              </Button>
+              <Button variant="outlined" onClick={() => handleReset(gameState, setGameState, true)}>
+                <Typography
+                  style={{
+                    align: "center",
+                    letter: "30%",
+                    letterSpacing: "0.3em",
+                    lineHeight: "18.75px",
+                    size: "16px",
+                    weight: 400,
+                  }}
+                >
+                  NO
+                </Typography>
+              </Button>
+            </Box>
+          </Box>
+        </Modal>
+        <Button onClick={handleOpen}>
+          <Typography
+            style={{
+              fontSize: "24px",
+              fontWeight: 560,
+              margin: "0px auto 20%",
+            }}
+          >
+            NEW GAME?
+          </Typography>
+        </Button>
       </NewGameContainer>
     </FluidContainer>
   );
