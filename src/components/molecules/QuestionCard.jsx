@@ -25,10 +25,12 @@ const QuestionCard = () => {
       justifyContent="flex-end"
       alignItems="center"
       margin="20% 0%"
+      padding="24px"
     >
       <StyledTypography
         style={{
           fontSize: "16px",
+          justifyContent: "center"
         }}
       >
         {questions[index.questionIndex]}

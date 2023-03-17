@@ -12,7 +12,7 @@ const GameScreenWrapper = styled.div`
   height: 100vh;
   display: flex;
   flex-direction: column;
-  padding: 45px 20px;
+  padding: 45px 0px;
   box-sizing: border-box;
 `;
 

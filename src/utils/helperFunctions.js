@@ -51,3 +51,22 @@ export const handleGameScreenRender = (state, setter) => {
   const newGameScreenRender = { ...state, gameScreenRender: notGameScreenRender };
   setter(newGameScreenRender);
 };
+
+export const handleGameBeginning = (state, setter) => {
+  const notGameScreenRender = !state.gameScreenRender;
+  const notGameStarted = !state.gameStart;
+  const gameHasBegun = { ...state, gameScreenRender: notGameScreenRender, gameStart: notGameStarted };
+  setter(gameHasBegun);
+};
+
+export const handleReset = (state, setter, resetToMenu) => {
+  const resetState = { ...state, makeCount: 0, breakCount: 0, skipCount: 0, questionIndex: 0, gameStart: true, gameComplete: false, gameScreenRender: true};
+
+  if (resetToMenu) {
+    const resetState = { ...state, makeCount: 0, breakCount: 0, skipCount: 0, questionIndex: 0, gameStart: false, gameComplete: false, gameScreenRender: false};
+    setter(resetState);
+    return;
+  }
+
+  setter(resetState);
+}

@@ -16,7 +16,6 @@ import { handleCompletionStatus } from "../utils";
 const Classic2 = () => {
   const [classicStates, setClassicStates] = useRecoilState(classicAtom);
   const gameStartStatus = classicStates.gameScreenRender;
-
   const compatibility = Math.ceil((classicStates.makeCount / classicStates.numberOfQuestions) * 100);
 
   // functions
@@ -41,7 +40,7 @@ const Classic2 = () => {
       } else {
         return `${randomCompletionMessage(100)}`;
       }
-  }
+  };
 
   useEffect(() => {
     if (classicStates.numberOfQuestions === classicStates.questionIndex) {
