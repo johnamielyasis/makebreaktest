@@ -26,6 +26,10 @@ const LandingButtons = () => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  const [settingsOpen, setSettingsOpen] = React.useState(false);
+  const handleSettingsOpen = () => setSettingsOpen(true);
+  const handleSettingsClose = () => setSettingsOpen(false);
+
   return (
     <div>
       <Container
@@ -114,7 +118,42 @@ const LandingButtons = () => {
         <br />
         <ReusableButton background={"#C5B3AA"}>SETTINGS</ReusableButton>
         <br />
-        <ReusableButton background={"#C5B3AA"}>TUTORIAL</ReusableButton>
+        <ReusableButton background={"#C5B3AA"} onClick={handleSettingsOpen}>TUTORIAL</ReusableButton>
+        <Modal
+              open={settingsOpen}
+              onClose={handleSettingsClose}
+              aria-labelledby="restart/continue game modal"
+              aria-describedby="choose to either restart the game or return to previous screen"
+            >
+              <Box
+                sx={modalStyle}
+                display="flex"
+                alignItems="center"
+                flexDirection="column"
+              >
+                <Typography
+                  style={{
+                    align: "center",
+                    color: "black",
+                    letter: "30%",
+                    letterSpacing: "0.3em",
+                    lineHeight: "18.75px",
+                    marginBottom: "24px",
+                    size: "16px",
+                    weight: 400,
+                  }}
+                >
+                  TUTORIAL MODAL
+                </Typography>
+                <Box
+                  minWidth="40%"
+                  display="flex"
+                  justifyContent="space-between"
+                >
+                 <Typography>TUTORIAL CAROUSEL WILL GO HERE</Typography>
+                </Box>
+              </Box>
+            </Modal>
       </Container>
     </div>
   );
