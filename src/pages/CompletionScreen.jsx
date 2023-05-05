@@ -9,9 +9,9 @@ import Modal from "@mui/material/Modal";
 import styled from "@emotion/styled";
 import { handleReset } from "../utils";
 
-
 const breakRed = themes.colorMap.breakRed;
 const makeGreen = themes.colorMap.makeGreen;
+const skipGrey = themes.colorMap.skipGrey;
 
 const modalStyle = {
   position: "absolute",
@@ -24,28 +24,8 @@ const modalStyle = {
   p: 4,
 };
 
-const BreakContainer = styled.div`
-  align-items: center;
-  display: flex;
-  height: 180px;
-  left: 0px;
-  top: 500px;
-  position: absolute;
-  width: 100%;
-`;
-
-const BreakCountContainer = styled.div`
-  align-items: center;
+const BreakResultContainer = styled.div`
   background-color: ${breakRed};
-  border-radius: 0px 100px 100px 0px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  display: flex;
-  height: 144px;
-  justify-content: center;
-  left: 0px;
-  padding: 0px 32px;
-  position: absolute;
-  width: 184px;
 `;
 
 const CompatibilityContainer = styled.div`
@@ -65,60 +45,25 @@ const FluidContainer = styled.div`
   width: 100%;
 `;
 
-const MakeContainer = styled.div`
-  align-items: center;
-  display: flex;
-  height: 144px;
-  width: 100%;
-`;
-
-const MakeCountContainer = styled.div`
-  align-items: center;
+const MakeResultContainer = styled.div`
   background-color: ${makeGreen};
-  border: solid 1px black;
-  border-radius: 0px 100px 100px 0px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  display: flex;
-  height: 144px;
-  justify-content: center;
-  left: 0px;
-  padding: 0px 32px;
-  position: absolute;
-  width: 240px;
 `;
-
 const NewGameContainer = styled.div`
   margin-top: auto;
 `;
 
 const ResultContainer = styled.div`
+  align-items: center;
   display: flex;
   flex-direction: column;
-`;
-
-const SkipContainer = styled.div`
-  align-items: center;
-  display: flex;
-  justify-content: right;
-  height: 180px;
-  position: absolute;
-  right: 0px;
-  top: 380px;
+  justify-content: space-around;
+  margin: auto;
+  min-height: 150px;
   width: 100%;
-  z-index: 1;
 `;
 
-const SkipCountContainer = styled.div`
-  align-items: center;
-  background-color: rgba(197, 179, 170, 0.7);
-  border-radius: 100px 0px 0px 100px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  display: flex;
-  height: 144px;
-  justify-content: center;
-  padding: 0px 32px;
-  position: absolute;
-  width: 180px;
+const SkipResultContainer = styled.div`
+  background-color: ${skipGrey};
 `;
 
 const CompletionScreen = () => {
@@ -160,48 +105,42 @@ const CompletionScreen = () => {
         </Typography>
       </CompatibilityContainer>
       <ResultContainer>
-        <MakeContainer>
-          <MakeCountContainer>
-            <Typography
-              style={{
-                fontSize: "16px",
-                fontWeight: 400,
-                letterSpacing: "0.3em",
-                lineHeight: "19px",
-              }}
-            >
-              MAKES: {gameState.makeCount}
-            </Typography>
-          </MakeCountContainer>
-        </MakeContainer>
-        <SkipContainer>
-          <SkipCountContainer>
-            <Typography
-              style={{
-                fontSize: "16px",
-                fontWeight: 400,
-                letterSpacing: "0.3em",
-                lineHeight: "19px",
-              }}
-            >
-              SKIPS: {gameState.skipCount}
-            </Typography>
-          </SkipCountContainer>
-        </SkipContainer>
-        <BreakContainer>
-          <BreakCountContainer>
-            <Typography
-              style={{
-                fontSize: "16px",
-                fontWeight: 400,
-                letterSpacing: "0.3em",
-                lineHeight: "19px",
-              }}
-            >
-              BREAKS: {gameState.breakCount}
-            </Typography>
-          </BreakCountContainer>
-        </BreakContainer>
+        <MakeResultContainer>
+          <Typography
+            style={{
+              fontSize: "16px",
+              fontWeight: 400,
+              letterSpacing: "0.3em",
+              lineHeight: "19px",
+            }}
+          >
+            MAKES: {gameState.makeCount}
+          </Typography>
+        </MakeResultContainer>
+        <SkipResultContainer>
+          <Typography
+            style={{
+              fontSize: "16px",
+              fontWeight: 400,
+              letterSpacing: "0.3em",
+              lineHeight: "19px",
+            }}
+          >
+            SKIPS: {gameState.skipCount}
+          </Typography>
+        </SkipResultContainer>
+        <BreakResultContainer>
+          <Typography
+            style={{
+              fontSize: "16px",
+              fontWeight: 400,
+              letterSpacing: "0.3em",
+              lineHeight: "19px",
+            }}
+          >
+            BREAKS: {gameState.breakCount}
+          </Typography>
+        </BreakResultContainer>
       </ResultContainer>
       <NewGameContainer>
         <Modal
@@ -247,7 +186,10 @@ const CompletionScreen = () => {
                   YES
                 </Typography>
               </Button>
-              <Button variant="outlined" onClick={() => handleReset(gameState, setGameState, true)}>
+              <Button
+                variant="outlined"
+                onClick={() => handleReset(gameState, setGameState, true)}
+              >
                 <Typography
                   style={{
                     align: "center",
