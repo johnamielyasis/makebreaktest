@@ -30,6 +30,10 @@ const LandingButtons = () => {
   const handleSettingsOpen = () => setSettingsOpen(true);
   const handleSettingsClose = () => setSettingsOpen(false);
 
+  const [tutorialOpen, setTutorialOpen] = React.useState(false);
+  const handleTutorialOpen = () => setTutorialOpen(true);
+  const handleTutorialClose = () => setTutorialOpen(false);
+
   return (
     <div>
       <Container
@@ -116,44 +120,75 @@ const LandingButtons = () => {
           </ReusableButton>
         )}
         <br />
-        <ReusableButton background={"#C5B3AA"}>SETTINGS</ReusableButton>
-        <br />
-        <ReusableButton background={"#C5B3AA"} onClick={handleSettingsOpen}>TUTORIAL</ReusableButton>
+        <ReusableButton background={"#C5B3AA"} onClick={handleSettingsOpen}>
+          SETTINGS
+        </ReusableButton>
         <Modal
-              open={settingsOpen}
-              onClose={handleSettingsClose}
-              aria-labelledby="restart/continue game modal"
-              aria-describedby="choose to either restart the game or return to previous screen"
+          open={settingsOpen}
+          onClose={handleSettingsClose}
+          aria-labelledby="restart/continue game modal"
+          aria-describedby="choose to either restart the game or return to previous screen"
+        >
+          <Box
+            sx={modalStyle}
+            display="flex"
+            alignItems="center"
+            flexDirection="column"
+          >
+            <Typography
+              style={{
+                align: "center",
+                color: "black",
+                letter: "30%",
+                letterSpacing: "0.3em",
+                lineHeight: "18.75px",
+                marginBottom: "24px",
+                size: "16px",
+                weight: 400,
+              }}
             >
-              <Box
-                sx={modalStyle}
-                display="flex"
-                alignItems="center"
-                flexDirection="column"
-              >
-                <Typography
-                  style={{
-                    align: "center",
-                    color: "black",
-                    letter: "30%",
-                    letterSpacing: "0.3em",
-                    lineHeight: "18.75px",
-                    marginBottom: "24px",
-                    size: "16px",
-                    weight: 400,
-                  }}
-                >
-                  TUTORIAL MODAL
-                </Typography>
-                <Box
-                  minWidth="40%"
-                  display="flex"
-                  justifyContent="space-between"
-                >
-                 <Typography>TUTORIAL CAROUSEL WILL GO HERE</Typography>
-                </Box>
-              </Box>
-            </Modal>
+              SETTING MODAL
+            </Typography>
+            <Box minWidth="40%" display="flex" justifyContent="space-between">
+              <Typography>SETTING CAROUSEL WILL GO HERE</Typography>
+            </Box>
+          </Box>
+        </Modal>
+        <br />
+        <ReusableButton background={"#C5B3AA"} onClick={handleTutorialOpen}>
+          TUTORIAL
+        </ReusableButton>
+        <Modal
+          open={tutorialOpen}
+          onClose={handleTutorialClose}
+          aria-labelledby="restart/continue game modal"
+          aria-describedby="choose to either restart the game or return to previous screen"
+        >
+          <Box
+            sx={modalStyle}
+            display="flex"
+            alignItems="center"
+            flexDirection="column"
+          >
+            <Typography
+              style={{
+                align: "center",
+                color: "black",
+                letter: "30%",
+                letterSpacing: "0.3em",
+                lineHeight: "18.75px",
+                marginBottom: "24px",
+                size: "16px",
+                weight: 400,
+              }}
+            >
+              TUTORIAL MODAL
+            </Typography>
+            <Box minWidth="40%" display="flex" justifyContent="space-between">
+              <Typography>TUTORIAL CAROUSEL WILL GO HERE</Typography>
+            </Box>
+          </Box>
+        </Modal>
       </Container>
     </div>
   );
