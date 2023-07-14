@@ -184,7 +184,7 @@ const LandingButtons = () => {
                 weight: 400,
               }}
             >
-              TUTORIAL MODAL
+              HOW TO PLAY
             </Typography>
             <Box minWidth="40%" display="flex" justifyContent="space-between">
               <Instructions />
