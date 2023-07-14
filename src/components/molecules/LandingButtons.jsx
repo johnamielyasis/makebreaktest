@@ -7,7 +7,9 @@ import Typography from "@mui/material/Typography";
 import ReusableButton from "../atoms/Button";
 import { useRecoilState } from "recoil";
 import { classicAtom } from "../../recoil/index.js";
+import { Instructions } from "../organisms";
 import { handleGameBeginning, handleReset } from "../../utils";
+import Data from "../../data.json";
 
 const modalStyle = {
   position: "absolute",
@@ -113,7 +115,7 @@ const LandingButtons = () => {
           <ReusableButton
             background={"#A8D1D6"}
             onClick={() => {
-              handleGameBeginning(gameStart, setGameStart);
+              handleGameBeginning(gameStart, setGameStart, Data);
             }}
           >
             PLAY
@@ -185,7 +187,7 @@ const LandingButtons = () => {
               TUTORIAL MODAL
             </Typography>
             <Box minWidth="40%" display="flex" justifyContent="space-between">
-              <Typography>TUTORIAL CAROUSEL WILL GO HERE</Typography>
+              <Instructions />
             </Box>
           </Box>
         </Modal>

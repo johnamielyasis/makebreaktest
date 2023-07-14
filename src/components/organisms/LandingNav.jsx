@@ -1,5 +1,5 @@
 import { classicAtom } from "../../recoil/index.js";
-import { handleGameScreenRender, handleGameStart } from "../../utils";
+import { handleGameScreenRender } from "../../utils";
 import styled from "@emotion/styled";
 import { MdArrowForwardIos } from "react-icons/md";
 import Typography from "@mui/material/Typography";

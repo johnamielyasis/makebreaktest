@@ -1,3 +1,5 @@
+import Data from "../data.json"
+
 export const handleCompletionStatus = (state, setter, compatibility, compatibilityMessage) => {
   const notCompletionStatus = !state.gameComplete;
   const newCompletionStatus = { ...state, gameComplete: notCompletionStatus, compatibility: compatibility, compatibilityMessage: compatibilityMessage };
@@ -52,10 +54,13 @@ export const handleGameScreenRender = (state, setter) => {
   setter(newGameScreenRender);
 };
 
-export const handleGameBeginning = (state, setter) => {
+export const handleGameBeginning = (state, setter, data) => {
   const notGameScreenRender = !state.gameScreenRender;
   const notGameStarted = !state.gameStart;
-  const gameHasBegun = { ...state, gameScreenRender: notGameScreenRender, gameStart: notGameStarted };
+  const shuffledDeck = data.questions.sort(function () {
+    return Math.random() - 0.5;
+  });
+  const gameHasBegun = { ...state, gameScreenRender: notGameScreenRender, gameStart: notGameStarted, questionDeck: shuffledDeck };
   setter(gameHasBegun);
 };
 
