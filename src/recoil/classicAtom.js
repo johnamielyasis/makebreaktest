@@ -9,6 +9,7 @@ export const classicAtom = atom({
         numberOfQuestions: 12,
         questionDeck: [],
         questionIndex: 0,
+        tutorialIndex: 0,
         compatibility: 0,
         compatibilityMessage: '',
         makeCount: 0,

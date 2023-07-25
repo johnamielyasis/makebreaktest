@@ -1,84 +1,82 @@
 {
-    "messages": {
-        "0": [
-            "Probably swipe left on this one.",
-            "...Ight Imma head out.",
-            "... They better be really hot.",
-            "Never gonna happen",
-            "SHEESH"
-        ],
-        "25": [
-            "Better luck next time.",
-            "Should probably stay friends...",
-            "Off to the next date..",
-            "... Let's just pretend this date never happened",
-            "thank u, next",
-            "ThIs DaTe WaS a GrEaT iDeA"
-        ],
-        "50": [
-            "Barely made it.", 
-            "Made it by the skin of your teeth.",
-            "I mean, I GUESS...",
-            "I MEAN, if there's really no one else.."
-        ], 
-        "70": [
-            "Cs get degrees.",
-            "It's getting hot in HURR!"
-        ],
-        "80": [
-            "Date 2 wen??",
-            "Start making out already.",
-            "You may now delete *INSERT DATING APP HERE*"
-        ],
-        "90": [
-            "Wedding day wen?",
-            "When is the wedding??",
-            "Don't forget to use protection ;)"
-        ],
-        "100": [
-            "Perfection *chef's kiss*",
-            "It was meant to be :')"
-        ]
-    },
-    "questions": [
-        "Do you like pineapple on pizza?",
-        "What is your love language?",
-        "Why do you think you are single? (if you are)",
-        "What do you hope to gain from dating?",
-        "What are your current personal goals?",
-        "What are 3 traits people you are dating must have?",
-        "Are you Gordon Ramsay in the kitchen?",
-        "What are you most grateful for?",
-        "Spontaneous adventure? Or a well-planned one?",
-        "What are your tastes in music?",
-        "How do you like your coffee?",
-        "What is your boba order?",
-        "Are you lactose intolerant?",
-        "What color do you think my aura is?",
-        "Do you believe in astrology?",
-        "Are you religious?",
-        "Name one thing that is a dealbreaker for you.",
-        "Do you stack your dishes and plates after eating at a restaurant?",
-        "Plant, fur, or real babies?",
-        "How important is sex in your relationship?",
-        "What are your dietary preferences?",
-        "Be honest: who did you vote for last year, and why?",
-        "What are your most frequently used emojis?",
-        "How are you with finances?",
-        "Do you like Anime? (better for asian edition exclusive questions)",
-        "Besides work, what occupies your time?",
-        "Staying in vs. going out?",
-        "Have you ever cheated on someone before?",
-        "What is your definition of cheating?",
-        "Does size matter to you?",
-        "Where do you stand on marriage?",
-        "Is physical attraction important to you?",
-        "What type of intelligence do you find attractive, if at all?",
-        "Do you speak any other languages?"
+  "messages": {
+    "0": [
+      "Probably swipe left on this one.",
+      "...Ight Imma head out.",
+      "... They better be really hot.",
+      "Never gonna happen",
+      "SHEESH"
     ],
-    "questionDuration": {
-        "easyQuestionDuration": 11,
-        "mediumQuestionDuration": 13,
-        "hardQuestionDuration": 15
-    }
+    "25": [
+      "Better luck next time.",
+      "Should probably stay friends...",
+      "Off to the next date..",
+      "... Let's just pretend this date never happened",
+      "thank u, next",
+      "ThIs DaTe WaS a GrEaT iDeA"
+    ],
+    "50": [
+      "Barely made it.",
+      "Made it by the skin of your teeth.",
+      "I mean, I GUESS...",
+      "I MEAN, if there's really no one else.."
+    ],
+    "70": ["Cs get degrees.", "It's getting hot in HURR!"],
+    "80": [
+      "Date 2 wen??",
+      "Start making out already.",
+      "You may now delete *INSERT DATING APP HERE*"
+    ],
+    "90": [
+      "Wedding day wen?",
+      "When is the wedding??",
+      "Don't forget to use protection ;)"
+    ],
+    "100": ["Perfection *chef's kiss*", "It was meant to be :')"]
+  },
+  "questions": [
+    "Do you like pineapple on pizza?",
+    "What is your love language?",
+    "Why do you think you are single? (if you are)",
+    "What do you hope to gain from dating?",
+    "What are your current personal goals?",
+    "What are 3 traits people you are dating must have?",
+    "Are you Gordon Ramsay in the kitchen?",
+    "What are you most grateful for?",
+    "Spontaneous adventure? Or a well-planned one?",
+    "What are your tastes in music?",
+    "How do you like your coffee?",
+    "What is your boba order?",
+    "Are you lactose intolerant?",
+    "What color do you think my aura is?",
+    "Do you believe in astrology?",
+    "Are you religious?",
+    "Name one thing that is a dealbreaker for you.",
+    "Do you stack your dishes and plates after eating at a restaurant?",
+    "Plant, fur, or real babies?",
+    "How important is sex in your relationship?",
+    "What are your dietary preferences?",
+    "Be honest: who did you vote for last year, and why?",
+    "What are your most frequently used emojis?",
+    "How are you with finances?",
+    "Do you like Anime? (better for asian edition exclusive questions)",
+    "Besides work, what occupies your time?",
+    "Staying in vs. going out?",
+    "Have you ever cheated on someone before?",
+    "What is your definition of cheating?",
+    "Does size matter to you?",
+    "Where do you stand on marriage?",
+    "Is physical attraction important to you?",
+    "What type of intelligence do you find attractive, if at all?",
+    "Do you speak any other languages?"
+  ],
+  "questionDuration": {
+    "easyQuestionDuration": 11,
+    "mediumQuestionDuration": 13,
+    "hardQuestionDuration": 15
+  },
+  "tutorial": {
+    "copy": [],
+    "images": ["tutorial-images/step-1.svg", "tutorial-images/step-2.svg", "tutorial-images/step-3.svg", "tutorial-images/step-4.svg"]
+  }
 }
