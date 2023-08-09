@@ -186,7 +186,7 @@ const LandingButtons = () => {
             >
               HOW TO PLAY
             </Typography>
-            <Box minWidth="40%" display="flex" justifyContent="space-between">
+            <Box minWidth="40%" height="300px" display="flex" justifyContent="space-between">
               <Instructions />
             </Box>
           </Box>

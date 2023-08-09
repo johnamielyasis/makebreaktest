@@ -71,7 +71,21 @@ export const handleReset = (state, setter, resetToMenu) => {
     const resetState = { ...state, makeCount: 0, breakCount: 0, skipCount: 0, questionIndex: 0, gameStart: false, gameComplete: false, gameScreenRender: false};
     setter(resetState);
     return;
-  }
+  };
 
   setter(resetState);
+};
+
+export const handleAdvanceTutorialIndex = (state, setter, data) => {
+  if (state !== data.length - 1) {
+    setter(state + 1);
+    console.log(state);
+  }
+}
+
+export const handleDecreaseTutorialIndex = (state, setter) => {
+  if (state !== 0) {
+    setter(state--);
+    console.log(state);
+  }
 }
