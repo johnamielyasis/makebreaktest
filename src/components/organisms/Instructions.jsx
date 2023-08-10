@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useState } from "react";
 import Data from "../../data.json";
-import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
+import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 import { Typography } from "@mui/material";
 import { handleAdvanceTutorialIndex } from "../../utils";
 
@@ -10,7 +10,6 @@ const tutorialCopy = Data.tutorial.copy;
 const InstructionsContainer = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
 `;
 
 const InstructionContent = styled.div`
@@ -26,10 +25,9 @@ const Instructions = () => {
 
   return (
     <InstructionsContainer>
-      <MdArrowBackIos
+      <IoIosArrowBack
         style={{
           fontSize: "48",
-          margin: "0px auto"
         }}
       />
       <InstructionContent>
@@ -39,15 +37,20 @@ const Instructions = () => {
           height="186px"
           width="300px"
         />
-        <Typography letterSpacing={1} margin="16px">{tutorialCopy[tutorialIndex]}</Typography>
+        <Typography letterSpacing={1} margin="auto" align="center">
+          {tutorialCopy[tutorialIndex]}
+        </Typography>
       </InstructionContent>
-      <MdArrowForwardIos
+      <IoIosArrowForward
         style={{
           fontSize: "48",
-          margin: "0px auto"
         }}
         onClick={() => {
-          handleAdvanceTutorialIndex(tutorialIndex, setTutorialIndex, tutorialData);
+          handleAdvanceTutorialIndex(
+            tutorialIndex,
+            setTutorialIndex,
+            tutorialData
+          );
         }}
       />
     </InstructionsContainer>
