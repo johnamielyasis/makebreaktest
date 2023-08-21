@@ -1,16 +1,23 @@
 import React from "react";
 import Container from "@mui/material/Container";
+import styled from "styled-components";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
 import Typography from "@mui/material/Typography";
 import ReusableButton from "../atoms/Button";
+import { IoIosCloseCircleOutline } from "react-icons/io";
 import { useRecoilState } from "recoil";
 import { classicAtom } from "../../recoil/index.js";
 import { Instructions } from "../organisms";
 import { handleGameBeginning, handleReset } from "../../utils";
 import Data from "../../data.json";
 
+const InstructionsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 const modalStyle = {
   position: "absolute",
   top: "50%",
@@ -171,6 +178,7 @@ const LandingButtons = () => {
             display="flex"
             alignItems="center"
             flexDirection="column"
+            justifyContent="space-between"
           >
             <Typography
               style={{
@@ -186,8 +194,19 @@ const LandingButtons = () => {
             >
               HOW TO PLAY
             </Typography>
-            <Box minWidth="40%" height="300px" display="flex" justifyContent="space-between">
-              <Instructions />
+            <Box
+              minWidth="40%"
+              height="300px"
+              display="flex"
+              justifyContent="space-between"
+            >
+              <InstructionsContainer>
+                <Instructions />
+                <IoIosCloseCircleOutline style={{ fontSize: 48,
+                marginTop: 24 }} 
+                onClick={() => handleTutorialClose()}
+                />
+              </InstructionsContainer>
             </Box>
           </Box>
         </Modal>

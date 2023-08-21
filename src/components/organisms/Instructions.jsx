@@ -3,10 +3,14 @@ import { useState } from "react";
 import Data from "../../data.json";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 import { Typography } from "@mui/material";
-import { handleAdvanceTutorialIndex } from "../../utils";
+import {
+  handleAdvanceTutorialIndex,
+  handleDecreaseTutorialIndex,
+} from "../../utils";
 
 const tutorialData = Data.tutorial.images;
 const tutorialCopy = Data.tutorial.copy;
+
 const InstructionsContainer = styled.div`
   display: flex;
   align-items: center;
@@ -25,11 +29,24 @@ const Instructions = () => {
 
   return (
     <InstructionsContainer>
-      <IoIosArrowBack
-        style={{
-          fontSize: "48",
-        }}
-      />
+      {tutorialIndex === 0 ? (
+        <IoIosArrowBack
+          style={{
+            fontSize: "48",
+            visibility: "hidden",
+          }}
+        />
+      ) : (
+        <IoIosArrowBack
+          style={{
+            fontSize: "48",
+          }}
+          onClick={() =>
+            handleDecreaseTutorialIndex(tutorialIndex, setTutorialIndex)
+          }
+        />
+      )}
+
       <InstructionContent>
         <img
           src={tutorialData[tutorialIndex]}
@@ -41,18 +58,27 @@ const Instructions = () => {
           {tutorialCopy[tutorialIndex]}
         </Typography>
       </InstructionContent>
-      <IoIosArrowForward
-        style={{
-          fontSize: "48",
-        }}
-        onClick={() => {
-          handleAdvanceTutorialIndex(
-            tutorialIndex,
-            setTutorialIndex,
-            tutorialData
-          );
-        }}
-      />
+      {tutorialIndex === tutorialData.length - 1 ? (
+        <IoIosArrowForward
+          style={{
+            fontSize: "48",
+            visibility: "hidden",
+          }}
+        />
+      ) : (
+        <IoIosArrowForward
+          style={{
+            fontSize: "48",
+          }}
+          onClick={() => {
+            handleAdvanceTutorialIndex(
+              tutorialIndex,
+              setTutorialIndex,
+              tutorialData
+            );
+          }}
+        />
+      )}
     </InstructionsContainer>
   );
 };

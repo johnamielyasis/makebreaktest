@@ -79,13 +79,9 @@ export const handleReset = (state, setter, resetToMenu) => {
 export const handleAdvanceTutorialIndex = (state, setter, data) => {
   if (state !== data.length - 1) {
     setter(state + 1);
-    console.log(state);
   }
 }
 
 export const handleDecreaseTutorialIndex = (state, setter) => {
-  if (state !== 0) {
-    setter(state--);
-    console.log(state);
-  }
-}
+    setter(state - 1);
+};
