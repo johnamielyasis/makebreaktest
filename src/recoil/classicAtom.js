@@ -4,10 +4,12 @@ export const classicAtom = atom({
     key: 'classicState',
     default: {
         gameComplete: false,
-        gameScreenRender: false,
         gameStart: false,
+        gameScreenRender: false,
         numberOfQuestions: 12,
+        questionDeck: [],
         questionIndex: 0,
+        tutorialIndex: 0,
         compatibility: 0,
         compatibilityMessage: '',
         makeCount: 0,

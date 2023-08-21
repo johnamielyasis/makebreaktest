@@ -3,7 +3,7 @@ import Typography from '@mui/material/Typography';
 
 const StyledTypography = ({children}) => {
     return (
-        <Typography>
+        <Typography align="center">
             {children}
         </Typography>        
     );

@@ -18,6 +18,7 @@ const GameScreenWrapper = styled.div`
 
 const GameScreen = () => {
   const [count, setCount] = useRecoilState(classicAtom);
+
   return (
     <GameScreenWrapper>
       <MobileNavbar />
